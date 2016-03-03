@@ -1,0 +1,202 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: #535944;
+    background-image: url(../images/grain.png), url(../images/damaged_bg.jpg);
+    background-repeat: repeat, no-repeat;
+    background-position: left top, center top;
+    color: white;
+}
+a {
+    color: #d6ed85;
+}
+a:hover,
+a:focus {
+    color: #C7FF00;
+}
+code {
+    display: block;
+}
+form {
+  margin: 0;
+}
+hr {
+    margin: 5px 0;
+    border-top: 1px solid #d6ed85;
+    border-bottom: 0 solid #fff;
+}
+input,
+select,
+textarea {
+    color: black;
+}
+.center {
+    margin: auto;
+}
+.small {
+    font-size: 90%;
+}
+.container {
+    width: auto;
+    max-width: 1280px;
+}
+.header {
+    background: url(../images/logo.png);
+    background-repeat: no-repeat;
+    height: 120px;
+}
+.block-title {
+    color: white;
+    font-size: 12pt;
+    font-weight: bold;
+    line-height: 16pt;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.bordered-block {
+    background-color: #61674f;
+    border: 1px solid #6c7358;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding: 10px;
+    margin-bottom: 18px;
+}
+.bordered-block>table,
+.bordered-block>.tbl1,
+.bordered-block>.tbl2 {
+    margin: -10px;
+    width: calc(100% + 20px);
+}
+.bordered-block>.shoutbox,
+.bordered-block>form[name=mod_form],
+.bordered-block>form[name=modopts] {
+    margin: 0 -10px;
+    padding: 10px;
+    width: calc(100% + 20px);
+}
+.news-item .image {
+    float: right;
+}
+.tbl1 {
+    background-color: #727A5D;
+}
+.tbl2 {
+    background-color: #6B7357;
+}
+.tbl1,
+.tbl2 {
+    padding: 10px;
+}
+.shoutbox,
+.shoutboxdate {
+    font-size: 13px;
+}
+.shoutbox:nth-of-type(2n+1) {
+    background-color: #6B7357;
+}
+.forum_thread_userbar .button {
+    margin-right: 1em;
+}
+.quote {
+    border-left: 1px solid #d6ed85;
+    padding-left: 5px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #798263;
+    border-color: #9FA388;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #5B6445;
+    border-color: #9FA388;
+}
+.pagination {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.pagination>li>a {
+    background-color: #798263;
+    border-color: #9FA388;
+    color: #d6ed85;
+}
+.pagination>li>a:hover {
+    background-color: #5B6445;
+    color: #d6ed85;
+}
+.pagination>.active>a,
+.pagination>.active>a:hover {
+    background-color: #101010;
+    border-color: #9FA388;
+}
+.pagination>.disabled>span {
+    background-color: #798263;
+    border-color: #9FA388;
+}
+.pager li>a,
+.pager li>span {
+    background-color: #798263;
+    border-color: #9FA388;
+    color: #d6ed85;
+}
+.pager li>a:hover,
+.pager li>a:focus {
+    background-color: #101010;
+    border-color: #9FA388;
+}
+#twitch>* {
+    max-width: 100%;
+}
+.modal-content {
+    background-color: #61674f;
+}
+.shoutbox_header {
+    padding-bottom: 20px;
+}
+.shoutbox_message {
+    padding-bottom: 10px;
+}
+.shoutbox_admin {
+    padding-top: 2px;
+}
+.shoutbox_header .avatar-small {
+    float: left;
+    margin-right: 8px;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-color: #888;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px 0px 10px #000000;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+.avatar-small {
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-color: #888;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px 0px 5px #000000;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+.popover {
+    border-color: #9FA388;
+}
+.popover-title {
+    background-color: #727A5D;
+}
+.popover-content {
+    background-color: #6B7357;
+}

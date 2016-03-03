@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <h3 class="modal-title">Templates</h3>
+</div>
+<div class="modal-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <!-- want to insert collection items, here -->
+    <tbody>
+      <tr ng-repeat="collection in collections">
+        <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+          <p>
+            <strong>{{ collection.title }}</strong>
+          </p>
+          <p>
+            <span ng-repeat="mod in collection.mods">
+              {{ mod }}
+            </span
+          </p>
+        </td>
+        <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+          <p>
+            <a class="btn btn-primary pull-right" ng-click="addCollection(collection)">
+              L&auml;gg till
+            </a>
+            <div class="clearfix"></div>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="close()">Stäng</button>
+</div>

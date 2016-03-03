@@ -1,0 +1,44 @@
+.operation-image-holder {
+  cursor: pointer;
+  position: relative;
+  padding-top: 15%;
+  background-size: cover;
+  background-position: center;
+  transition: padding-top .2s;
+  -webkit-transition: padding-top .2s;
+  overflow: hidden;
+}
+
+.operation-image-holder:hover {
+  padding-top: 50%;
+}
+
+.operation-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.operation-image {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+
+.operation-image-drop-box {
+  background: #F8F8F8;
+  color: black;
+  border: 5px dashed #DDD;
+  height: auto;
+  text-align: center;
+  padding: 40px 10px 40px 10px;
+  margin-bottom: 10px;
+}

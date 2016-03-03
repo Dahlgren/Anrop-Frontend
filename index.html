@@ -1,0 +1,250 @@
+<html>
+<body>
+<div ng-app="app">
+  <div class="row">
+  <div class="col-md-6">
+
+  <div ng-controller="EditOperationCtrl">
+    <style ng-if="operation.image">
+      @media screen and (max-width: 767px) {
+        #side-left {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        html:before {
+          content: "";
+          position: fixed;
+          height: 100%; width: 100%;
+          background: url({{ operation.image }});
+          background-position: center top;
+          background-repeat: no-repeat;
+          background-size: cover;
+          z-index: -1;
+
+          -webkit-filter: brightness(80%);
+          -moz-filter: brightness(80%);
+          -ms-filter: brightness(80%);
+          -o-filter: brightness(80%);
+          filter: brightness(80%);
+
+          -webkit-transform: translate3d(0, 0, 0);
+        }
+      }
+    </style>
+
+    <div class="block-title">Redigera {{ operation.title }}</div>
+    <div class="bordered-block ng-hide" ng-show="operation">
+      <form class="form" role="form" action="edit.php" method="POST" name='angular-form'>
+        <input type="hidden" name="edit" />
+        <input type="hidden" name="id" ng-value="operation.id" />
+        <div class="form-group">
+          <label for="title" class="control-label">Titel</label>
+          <input type="text" class="form-control" name="title" id="title" ng-model="operation.title">
+          <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+          <label for="date" class="control-label">Datum</label>
+          <input type="date" class="form-control" name="date" id="date" ng-model="operation.datetime">
+          <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+          <label for="time" class="control-label">Tid</label>
+          <input type="time" class="form-control" name="time" id="time" ng-model="operation.datetime">
+          <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+          <label for="thread_id" class="control-label">Tr&aring;d ID</label>
+          <input type="integer" class="form-control" name="discussion" id="thread_id" ng-model="operation.discussion">
+          <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+          <label for="image" class="control-label">Bild</label>
+          <div class="form-control operation-image-drop-box" accept="image/*" id="image"
+            ngf-select ng-model="file" ngf-multiple="false" ngf-pattern="'image/*'"
+            ngf-drop  ngf-drag-over-class="dragover">
+            Sl&auml;pp en bild h&aumlr eller klicka p&aring; f&auml;ltet f&ouml;r att ladda upp en ny bild
+          </div>
+          <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+          <label for="description" class="control-label">Beskrivning</label><br/>
+          <textarea class="form-control" id="description" name="description" rows="10" ng-model="operation.text"></textarea>
+          <span class="help-block"></span>
+        </div>
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+        <button class="btn btn-primary" type='button' ng-click="save()">
+          Spara
+        </button>
+
+        <a class="btn btn-primary" type='button' ng-href="/operations/operation.php?id={{ operation.id }}">Tillbaka</a>
+      </form>
+    </div>
+  </div>
+
+  <div ng-controller="AddonsCtrl">
+    <div class="block-title">Addons</div>
+    <div class="bordered-block ng-hide" ng-show="addons">
+      <table width=100% cellspacing=0>
+        <tr ng-repeat="addon in addons">
+          <td style='vertical-align: middle;' ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+            <form style='display: inline-block'>
+              <button type='submit' class='btn btn-primary' ng-click="delete(addon)">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
+              </button>
+            </form>
+
+            <a target=_blank ng-href="{{addon.url}}" ng-if="addon.url">{{ addon.name }}</a>
+            <a ng-if="!addon.url">{{ addon.name }}</a>
+          </td>
+        </tr>
+      </table>
+
+      <form ng-submit="add()" class="form" style="margin-top: 20px">
+        <div class="form-group">
+          <label for="mod" class="control-label">Mod</label>
+          <input type="text" class="form-control" name="mod" id="mod" ng-model="form.name">
+          <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+          <label for="url" class="control-label">Url</label>
+          <input type="text" class="form-control" name="url" id="url" ng-model="form.url">
+          <span class="help-block"></span>
+        </div>
+        <input type='submit' value='L&auml;gg till mod' class="btn btn-primary" />
+      </form>
+    </div>
+  </div>
+
+  <div ng-controller="PwsCtrl">
+    <div class="block-title">Arma3Sync / Play withSIX</div>
+    <div class="bordered-block ng-hide" ng-show="addons">
+      <table width=100% cellspacing=0>
+        <tr ng-repeat="addon in addons">
+          <td style='vertical-align: middle;' ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+            <form style='display: inline-block'>
+              <button type='submit' class='btn btn-primary' ng-click="delete(addon)">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
+              </button>
+            </form>
+
+            <a ng-href="http://play.withsix.com/arma-3/mods/{{addon.name}}">{{ addon.name }}</a>
+          </td>
+        </tr>
+      </table>
+
+      <input style="margin-top: 20px" type='button' value='Mallar' class="btn btn-primary" ng-click="templates()" />
+      <input style="margin-top: 20px" type='button' value='S&ouml;k PWS' class="btn btn-primary" ng-click="search()" />
+    </div>
+  </div>
+
+  </div>
+  <div class="col-md-6">
+
+  <div ng-controller="GroupsCtrl">
+  	<ul ng-model="groups" ui-sortable="groupsSortableOptions" class="list-unstyled">
+      <li ng-repeat="group in groups">
+        <div class="block-title">{{ group.title }}</div>
+        <div class="bordered-block ng-hide" ng-controller="SlotsCtrl" ng-show="groups">
+          <form class="form" style="margin-bottom: 20px" ng-submit="updateGroup(group)">
+            <div class="form-group">
+              <label for="title" class="control-label">Titel</label>
+              <input type="text" class="form-control" name="title" id="title" ng-model="group.title">
+              <span class="help-block"></span>
+            </div>
+
+            <button type="submit" style="vertical-align: top" ng-if="!slot.user" class="btn btn-primary">
+              <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" title="Spara"></span>
+            </button>
+
+            <button style="vertical-align: top" ng-if="!slot.user" class="btn btn-primary" ng-click="copyGroup(group)">
+              <span class="glyphicon glyphicon-duplicate" aria-hidden="true" title="Kopiera"></span>
+            </button>
+
+            <button style="vertical-align: top" ng-if="!slot.user" class="btn btn-primary" ng-click="deleteGroup(group)">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
+            </button>
+          </form>
+          <ul ng-model="slots" ui-sortable="slotsSortableOptions" class="list-unstyled" style="margin: -10px; width: calc(100% + 20px);">
+            <li ng-repeat="slot in slots">
+              <div style='vertical-align: top;' ng-class-odd="'tbl2'" ng-class-even="'tbl1'">
+                <div class="pull-left" style="margin-right: 8px">
+                  <div ng-if="slot.user && slot.user.avatar" class='avatar-small' style='background-image: url(/images/avatars/{{ slot.user.avatar }});'></div>
+                  <div ng-if="slot.user && !slot.user.avatar" class='avatar-small' style='background-image: url(/images/avatars/noavatar100.png);'></div>
+          	      <div ng-if="!slot.user" class='avatar-small'></div>
+          	    </div>
+                <form style='display: inline-block' ng-submit="updateSlot(slot)">
+                  <div style="display: inline-block">
+                    <input type='text' class="form-control" name='slot_name' ng-model='slot.title' style='display: inline; height: 24px; margin-right: 8px' />
+
+                    <br/ ng-if="slot.user">
+                    <a ng-href='/profile.php?lookup={{ slot.user.id }}'  ng-if="slot.user">
+                      {{ slot.user.name }}
+                    </a>
+                  </div>
+
+                  <button type="submit" style="vertical-align: top" class='btn btn-primary'>
+                    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" title="Spara"></span>
+                  </button>
+                </form>
+                <button style="vertical-align: top" class='btn btn-primary' ng-click="copySlot(slot)">
+                  <span class="glyphicon glyphicon-duplicate" aria-hidden="true" title="Kopiera"></span>
+                </button>
+
+                <button style="vertical-align: top" ng-if="!slot.user" class="btn btn-primary" ng-click="search(slot)">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true" title="Tilldela"></span>
+                </button>
+
+                <button style="vertical-align: top" ng-if="slot.user" class="btn btn-primary" ng-click="emptySlot(slot, slot.user)">
+                  <span class="glyphicon glyphicon-minus" aria-hidden="true" title="Avregistrera"></span>
+                </button>
+
+                <button style="vertical-align: top" ng-if="!slot.user" class="btn btn-primary" ng-click="deleteSlot(slot)">
+                  <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
+                </button>
+              </div>
+            </li>
+          </ul>
+
+          <form class="form" style="margin-top: 20px" ng-submit="addSlot()">
+            <div class="form-group">
+              <label for="title" class="control-label">Titel</label>
+              <input type="text" class="form-control" name="title" id="title" ng-model="title">
+              <span class="help-block"></span>
+            </div>
+
+            <button type='submit' class='btn btn-primary'>
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+          </form>
+        </div>
+      </li>
+  	</ul>
+
+    <div class="block-title">L&auml;gg till grupp</div>
+    <div class="bordered-block ng-hide" ng-show="groups">
+      <form class="form" ng-submit="addGroup()">
+        <div class="form-group">
+          <label for="title" class="control-label">Titel</label>
+          <input type="text" class="form-control" name="title" id="title" ng-model="title">
+          <span class="help-block"></span>
+        </div>
+
+        <button type='submit' class='btn btn-primary'>
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  </div>
+  </div>
+</div>
+
+<script src="bundle.js"></script>
+<script>
+  angular.module('app').value("operationId", "551");
+</script>
+</body>
+</html>

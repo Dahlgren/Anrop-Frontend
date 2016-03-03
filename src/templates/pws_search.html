@@ -1,0 +1,47 @@
+<div class="modal-header">
+  <h3 class="modal-title">S&ouml;k Play withSIX</h3>
+</div>
+<div class="modal-body">
+  <form class="form" role="form" ng-submit="search(query)">
+    <div class="form-group">
+      <label for="query" class="control-label">Del av namn eller titel</label>
+      <input type="text" class="form-control query" name="query" ng-model="query">
+      <span class="help-block"></span>
+    </div>
+    <input class="btn btn-primary" type='submit' value='S&ouml;k' class='btn btn-primary' />
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <!-- want to insert collection items, here -->
+    <tbody>
+      <tr ng-repeat="mod in mods">
+        <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+          <p>
+            <strong>{{ mod.name }}</strong>
+            <small>{{ mod.type }}</small>
+            <small>{{ mod.formattedSize }}</small>
+          </p>
+          <p>{{ mod.title }}</p>
+        </td>
+        <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+          <p>
+            <a class="btn btn-primary pull-right" ng-click="add(mod)">
+              L&auml;gg till
+            </a>
+            <div class="clearfix"></div>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="close()">Stäng</button>
+</div>

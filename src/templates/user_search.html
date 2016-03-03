@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title">Tilldela</h4>
+</div>
+<div class="modal-body">
+  <form ng-submit="search(query)" class="form form-horizontal">
+    <input type="text" class="username" name="user_name" ng-model="query" />
+    <input type="submit" class="btn btn-primary" value="S&ouml;k" />
+  </form>
+
+  <table class="table">
+    <tr ng-repeat="user in users">
+      <td>
+        <p class='form-control-static' style='display: inline'>
+          <button class='btn btn-primary pull-right' ng-click="assignUser(user)">Tilldela</button>
+          <img ng-src='{{ user.avatar }}' style='max-height: 20px; max-width: 20px;' ng-if='user.avatar' />
+          {{ user.name }}
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="close()">Avbryt</button>
+</div>
