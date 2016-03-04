@@ -1,0 +1,31 @@
+<div class="block-title">Addons</div>
+<div class="bordered-block ng-hide" ng-show="addons">
+  <table width=100% cellspacing=0>
+    <tr ng-repeat="addon in addons">
+      <td style='vertical-align: middle;' ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+        <form style='display: inline-block'>
+          <button type='submit' class='btn btn-primary' ng-click="delete(addon)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
+          </button>
+        </form>
+
+        <a target=_blank ng-href="{{addon.url}}" ng-if="addon.url">{{ addon.name }}</a>
+        <a ng-if="!addon.url">{{ addon.name }}</a>
+      </td>
+    </tr>
+  </table>
+
+  <form ng-submit="add()" class="form" style="margin-top: 20px">
+    <div class="form-group">
+      <label for="mod" class="control-label">Mod</label>
+      <input type="text" class="form-control" name="mod" id="mod" ng-model="form.name">
+      <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+      <label for="url" class="control-label">Url</label>
+      <input type="text" class="form-control" name="url" id="url" ng-model="form.url">
+      <span class="help-block"></span>
+    </div>
+    <input type='submit' value='L&auml;gg till mod' class="btn btn-primary" />
+  </form>
+</div>

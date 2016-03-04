@@ -1,0 +1,45 @@
+<form class="form" role="form" action="edit.php" method="POST" name='angular-form'>
+  <input type="hidden" name="edit" />
+  <input type="hidden" name="id" ng-value="operation.id" />
+  <div class="form-group">
+    <label for="title" class="control-label">Titel</label>
+    <input type="text" class="form-control" name="title" id="title" ng-model="operation.title">
+    <span class="help-block"></span>
+  </div>
+  <div class="form-group">
+    <label for="date" class="control-label">Datum</label>
+    <input type="date" class="form-control" name="date" id="date" ng-model="operation.datetime">
+    <span class="help-block"></span>
+  </div>
+  <div class="form-group">
+    <label for="time" class="control-label">Tid</label>
+    <input type="time" class="form-control" name="time" id="time" ng-model="operation.datetime">
+    <span class="help-block"></span>
+  </div>
+  <div class="form-group">
+    <label for="thread_id" class="control-label">Tr&aring;d ID</label>
+    <input type="integer" class="form-control" name="discussion" id="thread_id" ng-model="operation.discussion">
+    <span class="help-block"></span>
+  </div>
+  <div class="form-group">
+    <label for="image" class="control-label">Bild</label>
+    <div class="form-control operation-image-drop-box" accept="image/*" id="image"
+      ngf-select ng-model="file" ngf-multiple="false" ngf-pattern="'image/*'"
+      ngf-drop  ngf-drag-over-class="dragover">
+      Sl&auml;pp en bild h&aumlr eller klicka p&aring; f&auml;ltet f&ouml;r att ladda upp en ny bild
+    </div>
+    <span class="help-block"></span>
+  </div>
+  <div class="form-group">
+    <label for="description" class="control-label">Beskrivning</label><br/>
+    <textarea class="form-control" id="description" name="description" rows="10" ng-model="operation.text"></textarea>
+    <span class="help-block"></span>
+  </div>
+  <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+  <button class="btn btn-primary" type='button' ng-click="save()">
+    Spara
+  </button>
+
+  <a class="btn btn-primary" type='button' ng-href="/operations/operation.php?id={{ operation.id }}">Tillbaka</a>
+</form>
