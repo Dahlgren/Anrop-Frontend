@@ -1,6 +1,6 @@
 <div class="block-title">Kommande Operationer</div>
 <div class="bordered-block">
-  <div ng-repeat="operation in operations">
+  <div ng-repeat="operation in operations track by operation.id">
     <div class="operation-image-holder">
       <a href="#operations/{{ operation.id }}/edit" style="background-image: url({{ operation.image }});" class="operation-image"></a>
 

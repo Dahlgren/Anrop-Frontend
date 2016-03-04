@@ -1,5 +1,5 @@
 <ul ng-model="slots" ui-sortable="slotsSortableOptions" class="list-unstyled" style="margin: -10px; width: calc(100% + 20px);">
-  <li ng-repeat="slot in slots">
+  <li ng-repeat="slot in slots track by slot.id">
     <div style='vertical-align: top;' ng-class-odd="'tbl2'" ng-class-even="'tbl1'">
       <div class="pull-left" style="margin-right: 8px">
         <div ng-if="slot.user && slot.user.avatar" class='avatar-small' style='background-image: url(/images/avatars/{{ slot.user.avatar }});'></div>

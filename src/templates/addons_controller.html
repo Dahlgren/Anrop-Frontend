@@ -1,7 +1,7 @@
 <div class="block-title">Addons</div>
 <div class="bordered-block ng-hide" ng-show="addons">
   <table width=100% cellspacing=0>
-    <tr ng-repeat="addon in addons">
+    <tr ng-repeat="addon in addons track by addon.id">
       <td style='vertical-align: middle;' ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
         <form style='display: inline-block'>
           <button type='submit' class='btn btn-primary' ng-click="delete(addon)">
