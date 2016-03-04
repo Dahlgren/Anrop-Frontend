@@ -4,6 +4,8 @@ var imgurKey = 'Client-ID c068f0d04c394eb';
 angular.module('app').controller('EditOperationCtrl', function ($scope, operationId, OperationSvc, Upload, imgur) {
   imgur.setAPIKey(imgurKey);
 
+  $scope.operationId = operationId;
+
   $scope.$watch('file', function () {
     if ($scope.file) {
       $scope.uploadImage($scope.file);

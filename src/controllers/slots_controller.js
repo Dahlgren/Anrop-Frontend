@@ -1,45 +1,45 @@
 var angular = require('angular');
 
-angular.module('app').controller('SlotsCtrl', function ($scope, $uibModal, operationId, SlotsSvc) {
+angular.module('app').controller('SlotsCtrl', function ($scope, $uibModal, SlotsSvc) {
   var groupId = $scope.group.id;
   $scope.title = "";
   $scope.slots = [];
 
   $scope.addSlot = function () {
-    SlotsSvc.add(operationId, groupId, {title: $scope.title}).success(function (slot) {
+    SlotsSvc.add($scope.operationId, groupId, {title: $scope.title}).success(function (slot) {
       $scope.slots.push(slot);
       $scope.form = {};
     });
   };
 
   $scope.assignSlot = function (slot, user) {
-    SlotsSvc.assign(operationId, groupId, slot.id, {id: user.id}).success(function (slot) {
+    SlotsSvc.assign($scope.operationId, groupId, slot.id, {id: user.id}).success(function (slot) {
       loadSlots();
     });
   };
 
   $scope.emptySlot = function (slot, user) {
-    SlotsSvc.empty(operationId, groupId, slot.id, {id: user.id}).success(function (slot) {
+    SlotsSvc.empty($scope.operationId, groupId, slot.id, {id: user.id}).success(function (slot) {
       loadSlots();
     });
   };
 
   $scope.copySlot = function (slot) {
-    SlotsSvc.add(operationId, groupId, {title: slot.title}).success(function (slot) {
+    SlotsSvc.add($scope.operationId, groupId, {title: slot.title}).success(function (slot) {
       $scope.slots.push(slot);
       $scope.title = "";
     });
   };
 
   $scope.deleteSlot = function (slot) {
-    SlotsSvc.delete(operationId, groupId, slot.id).success(function () {
+    SlotsSvc.delete($scope.operationId, groupId, slot.id).success(function () {
       var index = $scope.slots.indexOf(slot);
       $scope.slots.splice(index, 1);
     });
   };
 
   $scope.updateSlot = function (slot) {
-    SlotsSvc.update(operationId, groupId, slot.id, slot).success(function () {
+    SlotsSvc.update($scope.operationId, groupId, slot.id, slot).success(function () {
 
     });
   };
@@ -52,7 +52,7 @@ angular.module('app').controller('SlotsCtrl', function ($scope, $uibModal, opera
           index: index,
         };
       });
-      SlotsSvc.order(operationId, groupId, positions).success(function () {
+      SlotsSvc.order($scope.operationId, groupId, positions).success(function () {
       });
     }
   };
@@ -75,7 +75,7 @@ angular.module('app').controller('SlotsCtrl', function ($scope, $uibModal, opera
   };
 
   var loadSlots = function () {
-    SlotsSvc.slots(operationId, groupId).success(function (slots) {
+    SlotsSvc.slots($scope.operationId, groupId).success(function (slots) {
       $scope.slots = slots;
     });
   };

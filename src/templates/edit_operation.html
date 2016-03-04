@@ -1,38 +1,36 @@
 <div class="row">
   <div class="col-md-6">
-    <div ng-controller="EditOperationCtrl">
-      <style ng-if="operation.image">
-        @media screen and (max-width: 767px) {
-          #side-left {
-            display: none;
-          }
+    <style ng-if="operation.image">
+      @media screen and (max-width: 767px) {
+        #side-left {
+          display: none;
         }
-        @media screen and (min-width: 768px) {
-          html:before {
-            content: "";
-            position: fixed;
-            height: 100%; width: 100%;
-            background: url({{ operation.image }});
-            background-position: center top;
-            background-repeat: no-repeat;
-            background-size: cover;
-            z-index: -1;
+      }
+      @media screen and (min-width: 768px) {
+        html:before {
+          content: "";
+          position: fixed;
+          height: 100%; width: 100%;
+          background: url({{ operation.image }});
+          background-position: center top;
+          background-repeat: no-repeat;
+          background-size: cover;
+          z-index: -1;
 
-            -webkit-filter: brightness(80%);
-            -moz-filter: brightness(80%);
-            -ms-filter: brightness(80%);
-            -o-filter: brightness(80%);
-            filter: brightness(80%);
+          -webkit-filter: brightness(80%);
+          -moz-filter: brightness(80%);
+          -ms-filter: brightness(80%);
+          -o-filter: brightness(80%);
+          filter: brightness(80%);
 
-            -webkit-transform: translate3d(0, 0, 0);
-          }
+          -webkit-transform: translate3d(0, 0, 0);
         }
-      </style>
+      }
+    </style>
 
-      <div class="block-title">Redigera {{ operation.title }}</div>
-      <div class="bordered-block ng-hide" ng-show="operation">
-        <operation-form></operation-form>
-      </div>
+    <div class="block-title">Redigera {{ operation.title }}</div>
+    <div class="bordered-block ng-hide" ng-show="operation">
+      <operation-form></operation-form>
     </div>
 
     <addons-controller></addons-controller>

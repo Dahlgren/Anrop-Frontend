@@ -1,23 +1,23 @@
 var angular = require('angular');
 
-angular.module('app').controller('AddonsCtrl', function ($scope, operationId, AddonsSvc) {
+angular.module('app').controller('AddonsCtrl', function ($scope, AddonsSvc) {
   $scope.form = {};
 
   $scope.add = function () {
-    AddonsSvc.add(operationId, $scope.form).success(function () {
+    AddonsSvc.add($scope.operationId, $scope.form).success(function () {
       loadAddons();
       $scope.form = {};
     });
   };
 
   $scope.delete = function (addon) {
-    AddonsSvc.delete(operationId, addon.id).success(function () {
+    AddonsSvc.delete($scope.operationId, addon.id).success(function () {
       loadAddons();
     });
   };
 
   var loadAddons = function () {
-    AddonsSvc.addons(operationId).success(function (addons) {
+    AddonsSvc.addons($scope.operationId).success(function (addons) {
       $scope.addons = addons;
     });
   };

@@ -1,13 +1,9 @@
 <html>
 <body>
 <div ng-app="app">
-  <operations-controller></operations-controller>
-  <edit-operation></edit-operation>
+  <div ng-view></div>
 </div>
 
 <script src="bundle.js"></script>
-<script>
-  angular.module('app').value("operationId", "551");
-</script>
 </body>
 </html>

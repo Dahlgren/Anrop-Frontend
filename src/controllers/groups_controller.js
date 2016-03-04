@@ -1,30 +1,30 @@
 var angular = require('angular');
 
-angular.module('app').controller('GroupsCtrl', function ($scope, operationId, GroupsSvc) {
+angular.module('app').controller('GroupsCtrl', function ($scope, GroupsSvc) {
   $scope.title = "";
 
   $scope.addGroup = function () {
-    GroupsSvc.add(operationId, {title: $scope.title}).success(function (group) {
+    GroupsSvc.add($scope.operationId, {title: $scope.title}).success(function (group) {
       $scope.groups.push(group);
       $scope.title = "";
     });
   };
 
   $scope.copyGroup = function (group) {
-    GroupsSvc.copy(operationId, group.id).success(function (group) {
+    GroupsSvc.copy($scope.operationId, group.id).success(function (group) {
       $scope.groups.push(group);
     });
   };
 
   $scope.deleteGroup = function (group) {
-    GroupsSvc.delete(operationId, group.id).success(function () {
+    GroupsSvc.delete($scope.operationId, group.id).success(function () {
       var index = $scope.groups.indexOf(group);
       $scope.groups.splice(index, 1);
     });
   };
 
   $scope.updateGroup = function (group) {
-    GroupsSvc.update(operationId, group.id, group).success(function () {
+    GroupsSvc.update($scope.operationId, group.id, group).success(function () {
 
     });
   };
@@ -37,13 +37,13 @@ angular.module('app').controller('GroupsCtrl', function ($scope, operationId, Gr
           index: index,
         };
       });
-      GroupsSvc.order(operationId, positions).success(function () {
+      GroupsSvc.order($scope.operationId, positions).success(function () {
       });
     }
   };
 
   var loadGroups = function () {
-    GroupsSvc.groups(operationId).success(function (groups) {
+    GroupsSvc.groups($scope.operationId).success(function (groups) {
       $scope.groups = groups;
     });
   };

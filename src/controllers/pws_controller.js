@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-angular.module('app').controller('PwsCtrl', function ($scope, $uibModal, operationId, PwsSvc) {
+angular.module('app').controller('PwsCtrl', function ($scope, $uibModal, PwsSvc) {
   $scope.form = {};
 
   $scope.add = function (data) {
@@ -9,7 +9,7 @@ angular.module('app').controller('PwsCtrl', function ($scope, $uibModal, operati
     });
 
     if (found.length === 0) {
-      return PwsSvc.add(operationId, data).success(function () {
+      return PwsSvc.add($scope.operationId, data).success(function () {
         loadAddons();
         $scope.form = {};
         return this;
@@ -18,7 +18,7 @@ angular.module('app').controller('PwsCtrl', function ($scope, $uibModal, operati
   };
 
   $scope.delete = function (addon) {
-    PwsSvc.delete(operationId, addon.id).success(function () {
+    PwsSvc.delete($scope.operationId, addon.id).success(function () {
       loadAddons();
       return this;
     });
@@ -53,7 +53,7 @@ angular.module('app').controller('PwsCtrl', function ($scope, $uibModal, operati
   };
 
   var loadAddons = function () {
-    PwsSvc.addons(operationId).success(function (addons) {
+    PwsSvc.addons($scope.operationId).success(function (addons) {
       $scope.addons = addons;
     });
   };
