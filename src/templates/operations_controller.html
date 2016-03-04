@@ -1,0 +1,21 @@
+<div class="block-title">Kommande Operationer</div>
+<div class="bordered-block">
+  <div ng-repeat="operation in operations">
+    <div class="operation-image-holder">
+      <a href="https://www.anrop.se/operations/operation.php?id={{ operation.id }}" style="background-image: url({{ operation.image }});" class="operation-image"></a>
+
+      <!-- Ribbons -->
+      <div class="corner-ribbon bottom-right red shadow" ng-if="operation.hidden">OPUBLICERAD</div>
+      <div class="corner-ribbon bottom-right green shadow" ng-if="operation.participating">DELTAR</div>
+
+      <div class="operation-image-overlay">
+        <div class="pull-right" style="text-align: right">&nbsp;<br>Deltagare: {{ operation.participants }} av {{ operation.number_of_slots }}</div>
+        <div class="pull-left" style="margin-right: 1em">
+          <div class="avatar-small" style="background-image: url({{ operation.user.avatar }});" alt=""></div>
+        </div>
+        <a href="/operations/operation.php?id=553">{{ operation.title }}</a> av {{ operation.user.name }}<br>
+        Startar {{ operation.datetime }}
+      </div>
+    </div>
+  </div>
+</div>
