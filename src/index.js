@@ -23,7 +23,7 @@ app.config(['$routeProvider',
     $routeProvider
       .when('/operations', {
         controller: 'OperationsCtrl',
-        template: require('./templates/operations_controller.html'),
+        template: require('./operations/templates/operations_controller.html'),
       })
       .when('/operations/:operationId/edit', {
         controller: 'EditOperationCtrl',
@@ -32,7 +32,7 @@ app.config(['$routeProvider',
             return $route.current.params.operationId;
           },
         },
-        template: require('./templates/edit_operation.html'),
+        template: require('./operations/templates/edit_operation.html'),
       })
       .otherwise({
         redirectTo: '/operations'
