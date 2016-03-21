@@ -1,4 +1,4 @@
-angular.module('app').directive('editOperation', function () {
+angular.module('operations').directive('editOperation', function () {
   return {
     template: require('../templates/edit_operation.html'),
   };

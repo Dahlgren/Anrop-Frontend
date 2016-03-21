@@ -1,4 +1,4 @@
-angular.module('app').directive('addonsController', function () {
+angular.module('operations').directive('addonsController', function () {
   return {
     controller: 'AddonsCtrl',
     template: require('../templates/addons_controller.html'),
