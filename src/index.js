@@ -14,6 +14,7 @@ require('ng-file-upload');
 require('ng-imgur');
 
 var app = angular.module('app', [
+  require('./navigation'),
   require('./operations'),
   'ngRoute',
 ]);
