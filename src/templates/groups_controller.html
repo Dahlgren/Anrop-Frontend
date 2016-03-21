@@ -1,6 +1,6 @@
 <div ng-controller="GroupsCtrl">
   <ul ng-model="groups" ui-sortable="groupsSortableOptions" class="list-unstyled">
-    <li ng-repeat="group in groups">
+    <li ng-repeat="group in groups track by group.id">
       <div class="block-title">{{ group.title }}</div>
 
       <div class="bordered-block ng-hide" ng-show="groups">
@@ -23,7 +23,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
           </button>
         </form>
-        
+
         <slots-controller></slots-controller>
       </div>
     </li>
