@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-angular.module('app').controller('GroupsCtrl', function ($scope, GroupsSvc) {
+angular.module('operations').controller('GroupsCtrl', function ($scope, GroupsSvc) {
   $scope.title = "";
 
   $scope.addGroup = function () {

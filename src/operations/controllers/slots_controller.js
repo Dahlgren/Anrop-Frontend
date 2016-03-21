@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-angular.module('app').controller('SlotsCtrl', function ($scope, $uibModal, SlotsSvc) {
+angular.module('operations').controller('SlotsCtrl', function ($scope, $uibModal, SlotsSvc) {
   var groupId = $scope.group.id;
   $scope.title = "";
   $scope.slots = [];

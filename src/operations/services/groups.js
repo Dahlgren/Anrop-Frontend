@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-angular.module('app').factory('GroupsSvc', function ($http) {
+angular.module('operations').factory('GroupsSvc', function ($http) {
   return {
     add: function (operationId, data) {
       return $http.post('/api/operations/' + operationId + '/groups', data);

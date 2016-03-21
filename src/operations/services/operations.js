@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-angular.module('app').factory('OperationSvc', function ($http) {
+angular.module('operations').factory('OperationSvc', function ($http) {
   return {
     operations: function () {
       return $http.get('/api/operations');
