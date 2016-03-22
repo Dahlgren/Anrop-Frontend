@@ -1,9 +1,10 @@
 {
-  "name": "anrop-operations",
+  "name": "anrop",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "postinstall": "webpack --config ./webpack.production.config.js --progress --colors",
     "start": "webpack-dev-server --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,21 +15,26 @@
     "angular-route": "^1.5.0",
     "angular-ui-bootstrap": "^1.2.1",
     "angular-ui-sortable": "^0.13.4",
+    "bootstrap": "^3.3.6",
     "bootstrap-webpack": "0.0.5",
-    "jquery": "^2.2.1",
-    "jquery-ui": "^1.10.5",
-    "ng-file-upload": "^12.0.1",
-    "ng-imgur": "^0.2.1"
-  },
-  "devDependencies": {
     "css-loader": "^0.23.1",
     "expose-loader": "^0.7.1",
+    "express": "^4.13.4",
+    "express-http-proxy": "^0.6.0",
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.12.0",
+    "jquery": "^2.2.1",
+    "jquery-ui": "^1.10.5",
+    "less": "^2.6.1",
     "less-loader": "^2.2.2",
+    "ng-file-upload": "^12.0.1",
+    "ng-imgur": "^0.2.1",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.14",
+    "webpack": "^1.12.14"
+  },
+  "devDependencies": {
     "webpack-dev-server": "^1.14.1"
   }
 }
