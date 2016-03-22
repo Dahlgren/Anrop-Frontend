@@ -1,0 +1,26 @@
+.shout-form {
+  display: block;
+  padding: 10px;
+  padding-bottom: 0;
+}
+.shout {
+  display: block;
+  font-size: 13px;
+  padding: 10px;
+}
+.shout:nth-of-type(2n+1) {
+  background-color: #6B7357;
+}
+.shout-header {
+  margin-bottom: 10px;
+}
+.shout-message {
+  margin-bottom: 0;
+}
+.shout-admin {
+  padding-top: 2px;
+}
+.shout-header .avatar-small {
+  float: left;
+  margin-right: 8px;
+}

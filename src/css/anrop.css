@@ -87,13 +87,6 @@ textarea {
 .tbl2 {
     padding: 10px;
 }
-.shoutbox,
-.shoutboxdate {
-    font-size: 13px;
-}
-.shoutbox:nth-of-type(2n+1) {
-    background-color: #6B7357;
-}
 .forum_thread_userbar .button {
     margin-right: 1em;
 }
@@ -153,19 +146,6 @@ textarea {
 }
 .modal-content {
     background-color: #61674f;
-}
-.shoutbox_header {
-    padding-bottom: 20px;
-}
-.shoutbox_message {
-    padding-bottom: 10px;
-}
-.shoutbox_admin {
-    padding-top: 2px;
-}
-.shoutbox_header .avatar-small {
-    float: left;
-    margin-right: 8px;
 }
 .avatar {
     width: 100px;

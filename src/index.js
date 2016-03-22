@@ -16,6 +16,7 @@ require('ng-imgur');
 var app = angular.module('app', [
   require('./navigation'),
   require('./operations'),
+  require('./shouts'),
   'ngRoute',
 ]);
 
@@ -34,6 +35,10 @@ app.config(['$routeProvider',
           },
         },
         template: require('./operations/templates/edit_operation.html'),
+      })
+      .when('/shoutbox', {
+        controller: 'ShoutsController',
+        template: require('./shouts/templates/shouts_controller.html'),
       })
       .otherwise({
         redirectTo: '/operations'
