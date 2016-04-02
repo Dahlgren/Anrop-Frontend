@@ -51,7 +51,7 @@ textarea {
     font-weight: bold;
     line-height: 16pt;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin: 32px 0 8px 10px;
 }
 .bordered-block {
     background-color: #61674f;

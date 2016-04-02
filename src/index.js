@@ -14,6 +14,7 @@ require('ng-file-upload');
 require('ng-imgur');
 
 var app = angular.module('app', [
+  require('./bbcode'),
   require('./navigation'),
   require('./operations'),
   require('./shouts'),
@@ -26,6 +27,15 @@ app.config(['$routeProvider',
       .when('/operations', {
         controller: 'OperationsCtrl',
         template: require('./operations/templates/operations_controller.html'),
+      })
+      .when('/operations/:operationId', {
+        controller: 'OperationCtrl',
+        resolve: {
+          operationId: function( $route ) {
+            return $route.current.params.operationId;
+          },
+        },
+        template: require('./operations/templates/operation.html'),
       })
       .when('/operations/:operationId/edit', {
         controller: 'EditOperationCtrl',

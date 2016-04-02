@@ -1,0 +1,54 @@
+<div id="operation">
+  <div ng-if="operation.image">
+    <div class="operation-image-holder">
+      <div style="background-image: url({{ operation.image }});" class="operation-image"></div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="operation-title">{{ operation.title }}</h1>
+            <h3 class="operation-date">{{ operation.datetime | date: "yyyy-MM-dd HH:mm" }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      body {
+        padding-top: 0;
+      }
+    </style>
+  </div>
+
+  <div class="container" ng-if="operation">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bordered-block" style="padding: 10px;">
+          <div class="operation-author pull-right">
+            <p class="text-center">Skapad av</p>
+            <div ng-if="operation.user.avatar" class='avatar' style='background-image: url(/images/avatars/{{ operation.user.avatar }});'></div>
+            <div ng-if="!operation.user.avatar" class='avatar' style='background-image: url(/images/avatars/noavatar100.png);'></div>
+
+            <p class="text-center">{{operation.user.name}}</p>
+          </div>
+
+          <div ng-if="!operation.image">
+            <h1 class="operation-title">{{ operation.title }}</h1>
+            <h3 class="operation-date">{{ operation.datetime | date: "yyyy-MM-dd HH:mm" }}</h3>
+          </div>
+
+          <p class="operation-description" ng-bind="operation.text" bbcode nl2br></p>
+        </div>
+
+        <groups-controller></groups-controller>
+
+        <addons-controller></addons-controller>
+
+        <pws-controller></pws-controller>
+
+        <teamspeak-info></teamspeak-info>
+
+      </div>
+    </div>
+  </div>
+</div>
