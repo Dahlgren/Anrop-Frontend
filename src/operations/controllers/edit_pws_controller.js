@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-angular.module('operations').controller('PwsCtrl', function ($scope, $uibModal, PwsSvc) {
+angular.module('operations').controller('EditPwsCtrl', function ($scope, $uibModal, PwsSvc) {
   $scope.form = {};
 
   $scope.add = function (data) {
