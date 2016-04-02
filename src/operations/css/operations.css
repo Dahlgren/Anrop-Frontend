@@ -1,16 +1,10 @@
 .operation-image-holder {
   cursor: pointer;
   position: relative;
-  padding-top: 15%;
+  padding-top: 25%;
   background-size: cover;
   background-position: center;
-  transition: padding-top .2s;
-  -webkit-transition: padding-top .2s;
   overflow: hidden;
-}
-
-.operation-image-holder:hover {
-  padding-top: 50%;
 }
 
 .operation-image-overlay {
