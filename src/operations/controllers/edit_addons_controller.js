@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-angular.module('operations').controller('AddonsCtrl', function ($scope, AddonsSvc) {
+angular.module('operations').controller('EditAddonsCtrl', function ($scope, AddonsSvc) {
   $scope.form = {};
 
   $scope.add = function () {

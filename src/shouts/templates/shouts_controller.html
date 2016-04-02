@@ -1,15 +1,17 @@
-<div class="block-title">Shouts</div>
-<div class="bordered-block ng-hide" ng-show="shouts">
-  <form ng-submit="create()" class="form shout-form">
-    <div class="form-group">
-      <label for="message" class="control-label">Meddelande</label>
-      <input type="text" class="form-control" name="message" id="message" ng-model="form.message">
-      <span class="help-block"></span>
-    </div>
-    <div class="form-group">
-      <input type='submit' value='Shout!' class="btn btn-primary" />
-    </div>
-  </form>
+<div class="container">
+  <div class="block-title">Shouts</div>
+  <div class="bordered-block ng-hide" ng-show="shouts">
+    <form ng-submit="create()" class="form shout-form">
+      <div class="form-group">
+        <label for="message" class="control-label">Meddelande</label>
+        <input type="text" class="form-control" name="message" id="message" ng-model="form.message">
+        <span class="help-block"></span>
+      </div>
+      <div class="form-group">
+        <input type='submit' value='Shout!' class="btn btn-primary" />
+      </div>
+    </form>
 
-  <shout shout="shout" ng-repeat="shout in shouts track by shout.id"></shout>
+    <shout shout="shout" ng-repeat="shout in shouts track by shout.id"></shout>
+  </div>
 </div>

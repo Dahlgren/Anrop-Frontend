@@ -1,20 +1,22 @@
-<div class="block-title">Kommande Operationer</div>
-<div class="bordered-block">
-  <div ng-repeat="operation in operations track by operation.id">
-    <div class="operation-image-holder">
-      <a href="#operations/{{ operation.id }}/edit" style="background-image: url({{ operation.image }});" class="operation-image"></a>
+<div class="container">
+  <div class="block-title">Kommande Operationer</div>
+  <div class="bordered-block ng-hide" ng-show="operations">
+    <div ng-repeat="operation in operations track by operation.id">
+      <div class="operation-image-holder">
+        <a href="#operations/{{ operation.id }}" style="background-image: url({{ operation.image }});" class="operation-image"></a>
 
-      <!-- Ribbons -->
-      <div class="corner-ribbon bottom-right red shadow" ng-if="operation.hidden">OPUBLICERAD</div>
-      <div class="corner-ribbon bottom-right green shadow" ng-if="operation.participating">DELTAR</div>
+        <!-- Ribbons -->
+        <div class="corner-ribbon bottom-right red shadow" ng-if="operation.hidden">OPUBLICERAD</div>
+        <div class="corner-ribbon bottom-right green shadow" ng-if="operation.participating">DELTAR</div>
 
-      <div class="operation-image-overlay">
-        <div class="pull-right" style="text-align: right">&nbsp;<br>Deltagare: {{ operation.participants }} av {{ operation.number_of_slots }}</div>
-        <div class="pull-left" style="margin-right: 1em">
-          <div class="avatar-small" style="background-image: url({{ operation.user.avatar }});" alt=""></div>
+        <div class="operation-image-overlay">
+          <div class="pull-right" style="text-align: right">&nbsp;<br>Deltagare: {{ operation.participants }} av {{ operation.number_of_slots }}</div>
+          <div class="pull-left" style="margin-right: 1em">
+            <div class="avatar-small" style="background-image: url({{ operation.user.avatar }});" alt=""></div>
+          </div>
+          <a href="/operations/operation.php?id=553">{{ operation.title }}</a> av {{ operation.user.name }}<br>
+          Startar {{ operation.datetime }}
         </div>
-        <a href="/operations/operation.php?id=553">{{ operation.title }}</a> av {{ operation.user.name }}<br>
-        Startar {{ operation.datetime }}
       </div>
     </div>
   </div>

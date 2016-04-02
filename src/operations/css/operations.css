@@ -1,16 +1,9 @@
 .operation-image-holder {
-  cursor: pointer;
   position: relative;
-  padding-top: 15%;
+  padding-top: 25%;
   background-size: cover;
   background-position: center;
-  transition: padding-top .2s;
-  -webkit-transition: padding-top .2s;
   overflow: hidden;
-}
-
-.operation-image-holder:hover {
-  padding-top: 50%;
 }
 
 .operation-image-overlay {
@@ -41,4 +34,17 @@
   text-align: center;
   padding: 40px 10px 40px 10px;
   margin-bottom: 10px;
+}
+
+#operation .operation-image-holder {
+  padding-top: 33%;
+}
+
+.operation-image-holder .operation-title, .operation-image-holder .operation-date {
+  margin: 5px 10px;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.operation-author {
+  padding-left: 10px;
 }

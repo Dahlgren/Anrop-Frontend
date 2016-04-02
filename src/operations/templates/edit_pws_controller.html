@@ -1,0 +1,21 @@
+<div class="block-title">Arma3Sync / Play withSIX</div>
+<div class="bordered-block ng-hide" ng-show="addons">
+  <table width=100% cellspacing=0>
+    <tr ng-repeat="addon in addons track by addon.id">
+      <td style='vertical-align: middle;' ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+        <form style='display: inline-block'>
+          <button type='submit' class='btn btn-primary' ng-click="delete(addon)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
+          </button>
+        </form>
+
+        <a ng-href="http://play.withsix.com/arma-3/mods/{{addon.name}}">{{ addon.name }}</a>
+      </td>
+    </tr>
+  </table>
+
+  <div style="padding: 10px;">
+    <input type='button' value='Mallar' class="btn btn-primary" ng-click="templates()" />
+    <input type='button' value='S&ouml;k PWS' class="btn btn-primary" ng-click="search()" />
+  </div>
+</div>

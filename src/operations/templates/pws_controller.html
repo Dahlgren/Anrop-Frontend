@@ -1,19 +1,57 @@
-<div class="block-title">Arma3Sync / Play withSIX</div>
+<div class="block-title">Arma3Sync</div>
 <div class="bordered-block ng-hide" ng-show="addons">
-  <table width=100% cellspacing=0>
-    <tr ng-repeat="addon in addons track by addon.id">
-      <td style='vertical-align: middle;' ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
-        <form style='display: inline-block'>
-          <button type='submit' class='btn btn-primary' ng-click="delete(addon)">
-            <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
-          </button>
-        </form>
+  <div class="tbl1">
+    <span ng-repeat="addon in addons track by addon.id">
+      <a ng-href="http://play.withsix.com/arma-3/mods/{{addon.name}}">{{ addon.name }}</a>{{ $last ? '' : ','}}
+    <span>
+  </div>
 
-        <a ng-href="http://play.withsix.com/arma-3/mods/{{addon.name}}">{{ addon.name }}</a>
-      </td>
-    </tr>
-  </table>
+  <div class="tbl2">
+    <img class="pull-right" src="../images/arma3sync.png">
 
-  <input style="margin-top: 20px" type='button' value='Mallar' class="btn btn-primary" ng-click="templates()" />
-  <input style="margin-top: 20px" type='button' value='S&ouml;k PWS' class="btn btn-primary" ng-click="search()" />
+    <p>
+      Lägg till följande URLer som autoconfig
+    </p>
+
+    <p>
+      <strong>Huvudrepo</strong>
+      <br/>
+      <code style="display: inline-block">http://arma3sync.anrop.se/.a3s/autoconfig</code>
+    </p>
+
+    <p>
+      <strong>SFP Development</strong> - Uppdateras varje natt
+      <br>
+      <code style="display: inline-block">http://sfp-dev.anrop.se/.a3s/autoconfig</code>
+    </p>
+
+    <p>Läs Armandurs finfina guide,
+      <a href="https://www.anrop.se/forum/viewthread.php?thread_id=3064">https://www.anrop.se/forum/viewthread.php?thread_id=3064</a>
+    </p>
+
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+<div class="block-title">Play withSIX</div>
+<div class="bordered-block ng-hide" ng-show="addons">
+  <div class="tbl1">
+    <span ng-repeat="addon in addons track by addon.id">
+      <a ng-href="http://play.withsix.com/arma-3/mods/{{addon.name}}">{{ addon.name }}</a>{{ $last ? '' : ','}}
+    <span>
+  </div>
+
+  <div class="tbl2">
+    <a href="pws://anrop.se/operations/pws/operation_579.yml"><img class="pull-right" src="../images/play_with_six.png"></a>
+
+    <p>
+      För att hantera dina mods med PlayWithSix, installera först programmet från deras hemsida,
+      <a href="http://withsix.com/download">http://withsix.com/download</a>,
+      och tryck sedan på länken eller lägg manuellt till den som ett repo,
+
+      <a href="pws://anrop.se/operations/pws/operation_579.yml">pws://anrop.se/operations/pws/operation_579.yml</a>
+    </p>
+
+    <div class="clearfix"></div>
+  </div>
 </div>

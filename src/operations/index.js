@@ -6,6 +6,9 @@ var app = angular.module('operations', [
   'ngImgur',
 ]);
 
+var css = require.context('./css', true, /.css$/);
+css.keys().forEach(css);
+
 var services = require.context('./services', true, /.js$/);
 services.keys().forEach(services);
 

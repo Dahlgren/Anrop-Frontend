@@ -51,28 +51,13 @@ textarea {
     font-weight: bold;
     line-height: 16pt;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin: 32px 0 8px 10px;
 }
 .bordered-block {
     background-color: #61674f;
     border: 1px solid #6c7358;
     box-sizing: border-box;
     word-wrap: break-word;
-    padding: 10px;
-    margin-bottom: 18px;
-}
-.bordered-block>table,
-.bordered-block>.tbl1,
-.bordered-block>.tbl2 {
-    margin: -10px;
-    width: calc(100% + 20px);
-}
-.bordered-block>.shoutbox,
-.bordered-block>form[name=mod_form],
-.bordered-block>form[name=modopts] {
-    margin: 0 -10px;
-    padding: 10px;
-    width: calc(100% + 20px);
 }
 .news-item .image {
     float: right;

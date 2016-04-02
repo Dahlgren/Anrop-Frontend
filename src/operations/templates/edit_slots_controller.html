@@ -1,0 +1,19 @@
+<ul ng-model="slots" ui-sortable="slotsSortableOptions" class="list-unstyled">
+  <li ng-repeat="slot in slots track by slot.id">
+    <div style='vertical-align: top;' ng-class-odd="'tbl2'" ng-class-even="'tbl1'">
+      <edit-slot></edit-slot>
+    </div>
+  </li>
+</ul>
+
+<form class="form" style="padding: 10px" ng-submit="addSlot()">
+  <div class="form-group">
+    <label for="title" class="control-label">Titel</label>
+    <input type="text" class="form-control" name="title" id="title" ng-model="title">
+    <span class="help-block"></span>
+  </div>
+
+  <button type='submit' class='btn btn-primary'>
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </button>
+</form>
