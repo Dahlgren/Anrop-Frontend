@@ -3,7 +3,7 @@
     <div class="block-title">{{ group.title }}</div>
 
     <div class="bordered-block ng-hide" ng-show="groups">
-      <form class="form" style="margin-bottom: 20px" ng-submit="updateGroup(group)">
+      <form class="form" style="padding: 10px" ng-submit="updateGroup(group)">
         <div class="form-group">
           <label for="title" class="control-label">Titel</label>
           <input type="text" class="form-control" name="title" id="title" ng-model="group.title">
@@ -30,7 +30,7 @@
 
 <div class="block-title">L&auml;gg till grupp</div>
 <div class="bordered-block ng-hide" ng-show="groups">
-  <form class="form" ng-submit="addGroup()">
+  <form class="form" ng-submit="addGroup()" style="padding: 10px;">
     <div class="form-group">
       <label for="title" class="control-label">Titel</label>
       <input type="text" class="form-control" name="title" id="title" ng-model="title">

@@ -1,0 +1,36 @@
+<div class="pull-left" style="margin-right: 8px">
+  <div ng-if="slot.user && slot.user.avatar" class='avatar-small' style='background-image: url(/images/avatars/{{ slot.user.avatar }});'></div>
+  <div ng-if="slot.user && !slot.user.avatar" class='avatar-small' style='background-image: url(/images/avatars/noavatar100.png);'></div>
+  <div ng-if="!slot.user" class='avatar-small'></div>
+</div>
+<form style='display: inline-block' ng-submit="updateSlot(slot)">
+  <div style="display: inline-block">
+    <input type='text' class="form-control" name='slot_name' ng-model='slot.title' style='display: inline; height: 24px; margin-right: 8px' />
+
+    <br/ ng-if="slot.user">
+    <a ng-href='/profile.php?lookup={{ slot.user.id }}'  ng-if="slot.user">
+      {{ slot.user.name }}
+    </a>
+  </div>
+
+  <button type="submit" style="vertical-align: top" class='btn btn-primary'>
+    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" title="Spara"></span>
+  </button>
+</form>
+<button style="vertical-align: top" class='btn btn-primary' ng-click="copySlot(slot)">
+  <span class="glyphicon glyphicon-duplicate" aria-hidden="true" title="Kopiera"></span>
+</button>
+
+<button style="vertical-align: top" ng-if="!slot.user" class="btn btn-primary" ng-click="search(slot)">
+  <span class="glyphicon glyphicon-plus" aria-hidden="true" title="Tilldela"></span>
+</button>
+
+<button style="vertical-align: top" ng-if="slot.user" class="btn btn-primary" ng-click="emptySlot(slot, slot.user)">
+  <span class="glyphicon glyphicon-minus" aria-hidden="true" title="Avregistrera"></span>
+</button>
+
+<button style="vertical-align: top" ng-if="!slot.user" class="btn btn-primary" ng-click="deleteSlot(slot)">
+  <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
+</button>
+
+<div class="clearfix"></div>
