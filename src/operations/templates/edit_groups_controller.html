@@ -1,12 +1,12 @@
 <ul ng-model="groups" ui-sortable="groupsSortableOptions" class="list-unstyled">
   <li ng-repeat="group in groups track by group.id">
-    <div class="block-title">{{ group.title }}</div>
+    <div class="block-title">{{ group.name }}</div>
 
     <div class="bordered-block ng-hide" ng-show="groups">
       <form class="form" style="padding: 10px" ng-submit="updateGroup(group)">
         <div class="form-group">
-          <label for="title" class="control-label">Titel</label>
-          <input type="text" class="form-control" name="title" id="title" ng-model="group.title">
+          <label for="name" class="control-label">Namn</label>
+          <input type="text" class="form-control" name="name" id="name" ng-model="group.name">
           <span class="help-block"></span>
         </div>
 
@@ -32,8 +32,8 @@
 <div class="bordered-block ng-hide" ng-show="groups">
   <form class="form" ng-submit="addGroup()" style="padding: 10px;">
     <div class="form-group">
-      <label for="title" class="control-label">Titel</label>
-      <input type="text" class="form-control" name="title" id="title" ng-model="title">
+      <label for="title" class="control-label">Namn</label>
+      <input type="text" class="form-control" name="name" id="name" ng-model="name">
       <span class="help-block"></span>
     </div>
 

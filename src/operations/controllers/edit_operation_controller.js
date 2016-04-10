@@ -21,7 +21,7 @@ angular.module('operations').controller('EditOperationCtrl', function ($scope, o
   $scope.save = function () {
     $scope.alerts = [];
     OperationSvc.update(operationId, $scope.operation).success(function (operation) {
-      operation.datetime = new Date(operation.datetime);
+      operation.start = new Date(operation.start);
       $scope.operation = operation;
       $scope.alerts = [
         { type: 'success', msg: 'Operationen har sparats.' }
@@ -31,7 +31,7 @@ angular.module('operations').controller('EditOperationCtrl', function ($scope, o
 
   var loadOperation = function () {
     OperationSvc.operation(operationId).success(function (operation) {
-      operation.datetime = new Date(operation.datetime);
+      operation.start = new Date(operation.start);
       $scope.operation = operation;
     });
   };
