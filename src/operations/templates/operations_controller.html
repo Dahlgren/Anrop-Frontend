@@ -14,8 +14,17 @@
           <div class="pull-left" style="margin-right: 1em">
             <div class="avatar-small" style="background-image: url({{ operation.user.avatar }});" alt=""></div>
           </div>
-          <a href="/operations/operation.php?id=553">{{ operation.title }}</a> av {{ operation.user.name }}<br>
-          Startar {{ operation.datetime }}
+
+          <span>
+            <a href="#operations/{{ operation.id }}">{{ operation.title }}</a>
+          </span>
+          <span class="hidden-xs">
+            av {{ operation.user.name }}
+          </span>
+          <br>
+          <span>
+            {{ operation.datetime }}
+          </span>
         </div>
       </div>
     </div>
