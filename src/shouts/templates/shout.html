@@ -1,11 +1,10 @@
 <div class="shout-header">
-  <div ng-if="shout.user_avatar" class='avatar-small' style='background-image: url(/images/avatars/{{ shout.user_avatar }});'></div>
-  <div ng-if="!shout.user_avatar" class='avatar-small' style='background-image: url(/images/avatars/noavatar100.png);'></div>
+  <div class='avatar-small' style='background-image: url({{ shout.user.avatar_url }});'></div>
 
-  <div class="shoutbox-name">{{shout.user_name}}</div>
-  <div class="shoutbox-date">{{shout.date*1000 | date:'yyyy-MM-dd HH:mm'}}</div>
+  <div class="shoutbox-name">{{shout.user.name}}</div>
+  <div class="shoutbox-date">{{shout.created_at * 1000 | date:'yyyy-MM-dd HH:mm'}}</div>
 
   <div class="clearfix"></div>
 </div>
 
-<p class="shout-message" ng-bind-html="shout.text | safe"></p>
+<p class="shout-message" ng-bind="shout.message" bbcode></p>

@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-md-12">
             <h1 class="operation-title">{{ operation.title }}</h1>
-            <h3 class="operation-date">{{ operation.datetime | date: "yyyy-MM-dd HH:mm" }}</h3>
+            <h3 class="operation-date">{{ operation.start | date: "yyyy-MM-dd HH:mm" }}</h3>
           </div>
         </div>
       </div>
@@ -26,10 +26,9 @@
         <div class="bordered-block" style="padding: 10px;">
           <div class="operation-author pull-right">
             <p class="text-center">Skapad av</p>
-            <div ng-if="operation.user.avatar" class='avatar' style='background-image: url(/images/avatars/{{ operation.user.avatar }});'></div>
-            <div ng-if="!operation.user.avatar" class='avatar' style='background-image: url(/images/avatars/noavatar100.png);'></div>
+            <div class='avatar' style='background-image: url({{ operation.author.avatar_url }});'></div>
 
-            <p class="text-center">{{operation.user.name}}</p>
+            <p class="text-center">{{operation.author.name}}</p>
           </div>
 
           <div ng-if="!operation.image">

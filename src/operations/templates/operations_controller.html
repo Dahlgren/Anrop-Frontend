@@ -10,20 +10,20 @@
         <div class="corner-ribbon bottom-right green shadow" ng-if="operation.participating">DELTAR</div>
 
         <div class="operation-image-overlay">
-          <div class="pull-right" style="text-align: right">&nbsp;<br>Deltagare: {{ operation.participants }} av {{ operation.number_of_slots }}</div>
+          <div class="pull-right" style="text-align: right">&nbsp;<br>Deltagare: {{ operation.number_of_participants }} av {{ operation.number_of_slots }}</div>
           <div class="pull-left" style="margin-right: 1em">
-            <div class="avatar-small" style="background-image: url({{ operation.user.avatar }});" alt=""></div>
+            <div class="avatar-small" style="background-image: url({{ operation.author.avatar_url }});" alt=""></div>
           </div>
 
           <span>
             <a href="#operations/{{ operation.id }}">{{ operation.title }}</a>
           </span>
           <span class="hidden-xs">
-            av {{ operation.user.name }}
+            av {{ operation.author.name }}
           </span>
           <br>
           <span>
-            {{ operation.datetime }}
+            Startar {{ operation.start | date:'yyyy-MM-dd HH:mm' }}
           </span>
         </div>
       </div>
