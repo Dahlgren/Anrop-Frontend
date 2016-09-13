@@ -1,4 +1,3 @@
-var angular = require('angular');
 var imgurKey = 'Client-ID c068f0d04c394eb';
 
 angular.module('operations').controller('EditOperationCtrl', function ($scope, operationId, OperationSvc, Upload, imgur) {

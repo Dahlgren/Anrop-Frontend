@@ -1,5 +1,3 @@
-var angular = require('angular');
-
 angular.module('operations').controller('PwsSearchCtrl', function ($scope, $uibModalInstance, PwsSvc) {
   $scope.query = "";
 

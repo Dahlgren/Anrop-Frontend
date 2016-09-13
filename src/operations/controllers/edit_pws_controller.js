@@ -1,5 +1,3 @@
-var angular = require('angular');
-
 angular.module('operations').controller('EditPwsCtrl', function ($scope, $uibModal, PwsSvc) {
   $scope.form = {};
 

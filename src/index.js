@@ -1,23 +1,11 @@
-require('expose?$!expose?jQuery!jquery');
-require('jquery-ui');
-
-require('bootstrap-loader');
-
 var css = require.context('./css', true, /.css$/);
 css.keys().forEach(css);
 
-require('angular');
-require('angular-route');
-require('angular-ui-bootstrap');
-require('angular-ui-sortable');
-require('ng-file-upload');
-require('ng-imgur');
-
 var app = angular.module('app', [
-  require('./bbcode'),
-  require('./navigation'),
-  require('./operations'),
-  require('./shouts'),
+  'bbcode',
+  'navigation',
+  'operations',
+  'shouts',
   'ngRoute',
 ]);
 

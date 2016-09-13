@@ -1,5 +1,3 @@
-var angular = require('angular');
-
 angular.module('operations').controller('PwsTemplatesCtrl', function ($scope, $uibModalInstance, PwsSvc) {
   $scope.addCollection = function (collection) {
     collection.mods.map(function (name) {

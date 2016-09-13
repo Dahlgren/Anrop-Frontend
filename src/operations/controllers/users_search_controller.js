@@ -1,5 +1,3 @@
-var angular = require('angular');
-
 angular.module('operations').controller('UserSearchCtrl', function ($scope, $uibModalInstance, UserSearchSvc, slot) {
   $scope.slot = slot;
   $scope.query = "";

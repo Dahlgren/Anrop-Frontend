@@ -1,5 +1,3 @@
-var angular = require('angular');
-
 angular.module('operations').factory('OperationSvc', function ($http) {
   return {
     operations: function () {
