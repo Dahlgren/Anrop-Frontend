@@ -1,7 +1,7 @@
 require('expose?$!expose?jQuery!jquery');
 require('jquery-ui');
 
-require('bootstrap-webpack!./bootstrap.config.js');
+require('bootstrap-loader');
 
 var css = require.context('./css', true, /.css$/);
 css.keys().forEach(css);
