@@ -12,9 +12,7 @@ module.exports = {
         target: 'https://anrop-api.herokuapp.com/',
         secure: false,
         changeOrigin: true,
-        rewrite: function(req) {
-          req.url = req.url.replace(/^\/api/, '');
-        },
+        pathRewrite: {'^/api' : ''},
       },
       '/images/*': {
         target: 'https://www.anrop.se/',
