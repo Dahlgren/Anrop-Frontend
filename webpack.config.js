@@ -3,11 +3,6 @@ var path = require("path");
 module.exports = {
   devServer: {
     proxy: {
-      '/api/pws/*': {
-        target: 'https://www.anrop.se/',
-        secure: false,
-        changeOrigin: true,
-      },
       '/api/users/*': {
         target: 'https://www.anrop.se/',
         secure: false,

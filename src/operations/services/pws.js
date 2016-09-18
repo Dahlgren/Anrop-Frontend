@@ -12,10 +12,10 @@ angular.module('operations').factory('PwsSvc', function ($http) {
       return $http.delete('/api/operations/' + operationId + '/play_with_six/' + id);
     },
     search: function (query) {
-      return $http.get('/api/pws/search?query=' + query);
+      return $http.get('https://playwithsix.anrop.se/search?q=' + query);
     },
     templates: function () {
-      return $http.get('/api/pws/templates');
+      return $http.get('https://playwithsix.anrop.se/templates');
     },
   };
 });
