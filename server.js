@@ -9,12 +9,6 @@ var staticPath = path.join(__dirname, 'build');
 
 app.use(express.static(staticPath))
 
-app.use('/api/pws', proxy('https://www.anrop.se', {
-  forwardPath: function(req, res) {
-    return '/api/pws' + require('url').parse(req.url).path;
-  }
-}));
-
 app.use('/api/users', proxy('https://www.anrop.se', {
   forwardPath: function(req, res) {
     return '/api/users' + require('url').parse(req.url).path;

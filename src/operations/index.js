@@ -6,6 +6,10 @@ var app = angular.module('operations', [
   'ngImgur',
 ]);
 
+app.config(['$compileProvider' , function ($compileProvider) {
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|pws):/);
+}]);
+
 var css = require.context('./css', true, /.css$/);
 css.keys().forEach(css);
 
