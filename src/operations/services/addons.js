@@ -1,13 +1,13 @@
-angular.module('operations').factory('AddonsSvc', function ($http) {
+angular.module('operations').factory('AddonsSvc', function ($http, ApiConfig) {
   return {
     add: function (operationId, data) {
-      return $http.post('/api/operations/' + operationId + '/addons', data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/addons', data);
     },
     addons: function (operationId) {
-      return $http.get('/api/operations/' + operationId + '/addons');
+      return $http.get(ApiConfig.BASE_API + '/operations/' + operationId + '/addons');
     },
     delete: function (operationId, id) {
-      return $http.delete('/api/operations/' + operationId + '/addons/' + id);
+      return $http.delete(ApiConfig.BASE_API + '/operations/' + operationId + '/addons/' + id);
     },
   };
 });

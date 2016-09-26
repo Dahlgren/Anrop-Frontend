@@ -9,6 +9,11 @@ var app = angular.module('app', [
   'ngRoute',
 ]);
 
+app.constant('ApiConfig', {
+  BASE_API: 'https://api.anrop.se',
+  BASE_PWS_API: 'https://playwithsix.anrop.se',
+});
+
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider

@@ -9,20 +9,6 @@ var staticPath = path.join(__dirname, 'build');
 
 app.use(express.static(staticPath))
 
-app.use('/api/users', proxy('https://www.anrop.se', {
-  forwardPath: function(req, res) {
-    return '/api/users' + require('url').parse(req.url).path;
-  }
-}));
-
-app.use('/api', proxy('https://anrop-api.herokuapp.com'));
-
-app.use('/images', proxy('https://www.anrop.se', {
-  forwardPath: function(req, res) {
-    return '/images' + require('url').parse(req.url).path;
-  }
-}));
-
 app.get('/*', function (req, res) {
   res.sendFile('index.html', {
     root: staticPath

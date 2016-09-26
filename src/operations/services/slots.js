@@ -1,25 +1,25 @@
-angular.module('operations').factory('SlotsSvc', function ($http) {
+angular.module('operations').factory('SlotsSvc', function ($http, ApiConfig) {
   return {
     add: function (operationId, groupId, data) {
-      return $http.post('/api/operations/' + operationId + '/groups/' + groupId + '/slots', data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + groupId + '/slots', data);
     },
     assign: function (operationId, groupId, slotId, data) {
-      return $http.post('/api/operations/' + operationId + '/groups/' + groupId + '/slots/' + slotId + '/assign', data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + groupId + '/slots/' + slotId + '/assign', data);
     },
     slots: function (operationId, groupId) {
-      return $http.get('/api/operations/' + operationId + '/groups/' + groupId + '/slots');
+      return $http.get(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + groupId + '/slots');
     },
     delete: function (operationId, groupId, id) {
-      return $http.delete('/api/operations/' + operationId + '/groups/' + groupId + '/slots/' + id);
+      return $http.delete(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + groupId + '/slots/' + id);
     },
     empty: function (operationId, groupId, slotId, data) {
-      return $http.post('/api/operations/' + operationId + '/groups/' + groupId + '/slots/' + slotId + '/empty', data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + groupId + '/slots/' + slotId + '/empty', data);
     },
     update: function (operationId, groupId, id, data) {
-      return $http.post('/api/operations/' + operationId + '/groups/' + groupId + '/slots/' + id, data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + groupId + '/slots/' + id, data);
     },
     order: function (operationId, groupId, data) {
-      return $http.post('/api/operations/' + operationId + '/groups/' + groupId + '/slots/order', data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + groupId + '/slots/order', data);
     },
   };
 });
