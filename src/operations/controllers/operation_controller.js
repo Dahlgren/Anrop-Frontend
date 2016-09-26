@@ -1,8 +1,6 @@
-angular.module('operations').controller('OperationCtrl', function ($scope, operationId, OperationSvc) {
-  $scope.operationId = operationId;
-
+angular.module('operations').controller('OperationCtrl', function ($scope, OperationSvc) {
   var loadOperation = function () {
-    OperationSvc.operation(operationId).success(function (operation) {
+    OperationSvc.operation($scope.operationId).success(function (operation) {
       operation.datetime = new Date(operation.datetime);
       $scope.operation = operation;
     });
