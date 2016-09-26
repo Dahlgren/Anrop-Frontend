@@ -1,9 +1,7 @@
 var imgurKey = 'Client-ID c068f0d04c394eb';
 
-angular.module('operations').controller('EditOperationCtrl', function ($scope, operationId, OperationSvc, Upload, imgur) {
+angular.module('operations').controller('EditOperationCtrl', function ($scope, OperationSvc, Upload, imgur) {
   imgur.setAPIKey(imgurKey);
-
-  $scope.operationId = operationId;
 
   $scope.$watch('file', function () {
     if ($scope.file) {
@@ -19,7 +17,7 @@ angular.module('operations').controller('EditOperationCtrl', function ($scope, o
 
   $scope.save = function () {
     $scope.alerts = [];
-    OperationSvc.update(operationId, $scope.operation).success(function (operation) {
+    OperationSvc.update($scope.operationId, $scope.operation).success(function (operation) {
       operation.start = new Date(operation.start);
       $scope.operation = operation;
       $scope.alerts = [
@@ -29,7 +27,7 @@ angular.module('operations').controller('EditOperationCtrl', function ($scope, o
   };
 
   var loadOperation = function () {
-    OperationSvc.operation(operationId).success(function (operation) {
+    OperationSvc.operation($scope.operationId).success(function (operation) {
       operation.start = new Date(operation.start);
       $scope.operation = operation;
     });
