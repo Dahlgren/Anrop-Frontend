@@ -23,8 +23,8 @@ angular.module('bbcode').value('snippets', {
 
 		const videoId = result[YOUTUBE_ID_REGEXP_INDEX];
 
-		return `<div class="embed-responsive embed-responsive-16by9">
-			<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
-		</div>`;
+		return '<div class="embed-responsive embed-responsive-16by9">' +
+			'<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + videoId + '" allowfullscreen></iframe>' +
+		'</div>';
 	},
 });

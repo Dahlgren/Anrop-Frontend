@@ -20,6 +20,11 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+    }),
     new webpack.optimize.CommonsChunkPlugin('init.js'),
   ],
 }
