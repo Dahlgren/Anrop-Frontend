@@ -1,5 +1,3 @@
-var angular = require('angular');
-
 angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibModal, SlotsSvc) {
   var groupId = $scope.group.id;
   $scope.title = "";

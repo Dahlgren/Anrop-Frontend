@@ -1,5 +1,3 @@
-var angular = require('angular');
-
 angular.module('operations').controller('EditGroupsCtrl', function ($scope, GroupsSvc) {
   $scope.title = "";
 

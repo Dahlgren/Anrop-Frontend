@@ -1,5 +1,3 @@
-var angular = require('angular');
-
 angular.module('operations').controller('PwsCtrl', function ($scope, PwsSvc) {
   var loadAddons = function () {
     PwsSvc.addons($scope.operationId).success(function (addons) {

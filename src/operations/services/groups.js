@@ -1,5 +1,3 @@
-var angular = require('angular');
-
 angular.module('operations').factory('GroupsSvc', function ($http) {
   return {
     add: function (operationId, data) {

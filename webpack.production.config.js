@@ -3,9 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
-  entry: {
-    app: "./src/",
-  },
+  entry: require('./webpack/entry'),
   module: require('./webpack/module'),
   output: require('./webpack/output'),
   plugins: [
@@ -18,6 +16,11 @@ module.exports = {
         "NODE_ENV": JSON.stringify("production")
       }
     }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
     new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.CommonsChunkPlugin('init.js'),
   ],
 }

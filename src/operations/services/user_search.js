@@ -1,5 +1,3 @@
-var angular = require('angular');
-
 angular.module('operations').factory('UserSearchSvc', function ($http) {
   return {
     search: function (query) {
