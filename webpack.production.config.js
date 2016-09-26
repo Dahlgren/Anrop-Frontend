@@ -20,7 +20,6 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.CommonsChunkPlugin('init.js'),
   ],
 }
