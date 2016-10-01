@@ -1,11 +1,13 @@
 module.exports = {
   app: './src/',
+  auth: './src/auth',
   bbcode: './src/bbcode',
   navigation: './src/navigation',
   operations: './src/operations',
   shouts: './src/shouts',
   vendor: [
     'angular',
+    'angular-cookies',
     'angular-route',
     'angular-ui-bootstrap',
     'angular-ui-sortable',

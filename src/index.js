@@ -2,6 +2,7 @@ var css = require.context('./css', true, /.css$/);
 css.keys().forEach(css);
 
 var app = angular.module('app', [
+  'auth',
   'bbcode',
   'navigation',
   'operations',
