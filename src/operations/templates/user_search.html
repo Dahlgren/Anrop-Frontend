@@ -4,7 +4,7 @@
 </div>
 <div class="modal-body">
   <form ng-submit="search(query)" class="form form-horizontal">
-    <input type="text" class="username" name="user_name" ng-model="query" />
+    <input type="text" class="username" name="q" ng-model="query" />
     <input type="submit" class="btn btn-primary" value="S&ouml;k" />
   </form>
 
@@ -13,8 +13,12 @@
       <td>
         <p class='form-control-static' style='display: inline'>
           <button class='btn btn-primary pull-right' ng-click="assignUser(user)">Tilldela</button>
-          <img ng-src='{{ user.avatar }}' style='max-height: 20px; max-width: 20px;' ng-if='user.avatar' />
-          {{ user.name }}
+
+          <div class="pull-left" style="margin-right: 8px">
+            <div class='avatar-small' style='background-image: url({{ user.avatar_url }});'></div>
+          </div>
+
+          <span>{{ user.name }}</span>
         </p>
       </td>
     </tr>
