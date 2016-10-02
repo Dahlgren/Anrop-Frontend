@@ -7,7 +7,6 @@ module.exports = {
   shouts: './src/shouts',
   vendor: [
     'angular',
-    'angular-cookies',
     'angular-route',
     'angular-ui-bootstrap',
     'angular-ui-sortable',
