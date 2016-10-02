@@ -2,12 +2,18 @@ var css = require.context('./css', true, /.css$/);
 css.keys().forEach(css);
 
 var app = angular.module('app', [
+  'auth',
   'bbcode',
   'navigation',
   'operations',
   'shouts',
   'ngRoute',
 ]);
+
+app.constant('ApiConfig', {
+  BASE_API: 'https://api.anrop.se',
+  BASE_PWS_API: 'https://playwithsix.anrop.se',
+});
 
 app.config(['$routeProvider',
   function($routeProvider) {

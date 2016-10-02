@@ -1,22 +1,22 @@
-angular.module('operations').factory('GroupsSvc', function ($http) {
+angular.module('operations').factory('GroupsSvc', function ($http, ApiConfig) {
   return {
     add: function (operationId, data) {
-      return $http.post('/api/operations/' + operationId + '/groups', data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups', data);
     },
     copy: function (operationId, id) {
-      return $http.post('/api/operations/' + operationId + '/groups/' + id + '/copy');
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id + '/copy');
     },
     groups: function (operationId) {
-      return $http.get('/api/operations/' + operationId + '/groups');
+      return $http.get(ApiConfig.BASE_API + '/operations/' + operationId + '/groups');
     },
     delete: function (operationId, id) {
-      return $http.delete('/api/operations/' + operationId + '/groups/' + id);
+      return $http.delete(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id);
     },
     update: function (operationId, id, data) {
-      return $http.post('/api/operations/' + operationId + '/groups/' + id, data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id, data);
     },
     order: function (operationId, data) {
-      return $http.post('/api/operations/' + operationId + '/groups/order', data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/order', data);
     },
   };
 });
