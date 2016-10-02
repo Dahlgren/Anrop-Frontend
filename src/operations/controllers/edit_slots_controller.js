@@ -11,13 +11,13 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
   };
 
   $scope.assignSlot = function (slot, user) {
-    SlotsSvc.assign($scope.operationId, groupId, slot.id, {id: user.id}).success(function (slot) {
+    SlotsSvc.update($scope.operationId, groupId, slot.id, {user_id: user.id}).success(function (slot) {
       loadSlots();
     });
   };
 
   $scope.emptySlot = function (slot, user) {
-    SlotsSvc.empty($scope.operationId, groupId, slot.id, {id: user.id}).success(function (slot) {
+    SlotsSvc.update($scope.operationId, groupId, slot.id, {user_id: null}).success(function (slot) {
       loadSlots();
     });
   };
