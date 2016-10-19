@@ -6,6 +6,7 @@ angular.module('bbcode').value('snippets', {
 	"u": "<u>$1</u>", // Underlined text
 	"i": "<i>$1</i>", // Italicized text
 	"s": "<s>$1</s>", // Strikethrough text
+	"color=(.*)": "<span style='color:$1'>$2</span>", // Text Color
 	"size=(12|16|20|24|28|32)": "<span style='font-size:$1px'>$2</span>", // Font Size
 	"img": "<img class=\"img-responsive\" src=\"$1\" />", // Image without title
 	"img=([^\\[\\]<>]+?)": "<img class=\"img-responsive\" src=\"$1\" alt=\"$2\" />", // Image with title
