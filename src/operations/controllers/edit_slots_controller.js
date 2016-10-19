@@ -1,10 +1,12 @@
 angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibModal, SlotsSvc) {
   var groupId = $scope.group.id;
-  $scope.title = "";
+  $scope.form = {
+    name: "",
+  };
   $scope.slots = [];
 
   $scope.addSlot = function () {
-    SlotsSvc.add($scope.operationId, groupId, {title: $scope.title}).success(function (slot) {
+    SlotsSvc.add($scope.operationId, groupId, {name: $scope.name}).success(function (slot) {
       $scope.slots.push(slot);
       $scope.form = {};
     });
@@ -23,7 +25,7 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
   };
 
   $scope.copySlot = function (slot) {
-    SlotsSvc.add($scope.operationId, groupId, {title: slot.title}).success(function (slot) {
+    SlotsSvc.add($scope.operationId, groupId, {name: slot.name}).success(function (slot) {
       $scope.slots.push(slot);
       $scope.title = "";
     });

@@ -1,10 +1,12 @@
 angular.module('operations').controller('EditGroupsCtrl', function ($scope, GroupsSvc) {
-  $scope.title = "";
+  $scope.form = {
+    name: "",
+  };
 
   $scope.addGroup = function () {
-    GroupsSvc.add($scope.operationId, {title: $scope.title}).success(function (group) {
+    GroupsSvc.add($scope.operationId, $scope.form).success(function (group) {
       $scope.groups.push(group);
-      $scope.title = "";
+      $scope.name = "";
     });
   };
 

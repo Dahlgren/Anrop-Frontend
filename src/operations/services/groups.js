@@ -1,7 +1,9 @@
 angular.module('operations').factory('GroupsSvc', function ($http, ApiConfig) {
   return {
     add: function (operationId, data) {
-      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups', data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups', {
+        group: data
+      });
     },
     copy: function (operationId, id) {
       return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id + '/copy');
@@ -13,7 +15,9 @@ angular.module('operations').factory('GroupsSvc', function ($http, ApiConfig) {
       return $http.delete(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id);
     },
     update: function (operationId, id, data) {
-      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id, data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id, {
+        group: data
+      });
     },
     order: function (operationId, data) {
       return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/order', data);

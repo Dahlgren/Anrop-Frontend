@@ -32,7 +32,7 @@
 
         <div ng-if="!operation.image">
           <h1 class="operation-title">{{ operation.title }}</h1>
-          <h3 class="operation-date">{{ operation.datetime | date: "yyyy-MM-dd HH:mm" }}</h3>
+          <h3 class="operation-date">{{ operation.start | date: "yyyy-MM-dd HH:mm" }}</h3>
         </div>
 
         <p class="operation-description" ng-bind="operation.text" bbcode nl2br></p>

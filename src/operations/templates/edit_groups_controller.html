@@ -14,11 +14,11 @@
           <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" title="Spara"></span>
         </button>
 
-        <button style="vertical-align: top" class="btn btn-primary" ng-click="copyGroup(group)">
+        <button style="vertical-align: top" class="btn btn-primary" ng-click="copyGroup(group); $event.stopPropagation();">
           <span class="glyphicon glyphicon-duplicate" aria-hidden="true" title="Kopiera"></span>
         </button>
 
-        <button style="vertical-align: top" class="btn btn-primary" ng-click="deleteGroup(group)">
+        <button style="vertical-align: top" class="btn btn-primary" ng-click="deleteGroup(group); $event.stopPropagation();">
           <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
         </button>
       </form>
@@ -33,7 +33,7 @@
   <form class="form" ng-submit="addGroup()" style="padding: 10px;">
     <div class="form-group">
       <label for="title" class="control-label">Namn</label>
-      <input type="text" class="form-control" name="name" id="name" ng-model="name">
+      <input type="text" class="form-control" name="name" id="name" ng-model="form.name">
       <span class="help-block"></span>
     </div>
 
