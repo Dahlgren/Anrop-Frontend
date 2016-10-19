@@ -7,7 +7,9 @@ angular.module('operations').factory('OperationSvc', function ($http, ApiConfig)
       return $http.get(ApiConfig.BASE_API + '/operations/' + id);
     },
     update: function (id, data) {
-      return $http.post(ApiConfig.BASE_API + '/operations/' + id, data);
+      return $http.patch(ApiConfig.BASE_API + '/operations/' + id, {
+        operation: data
+      });
     },
   };
 });

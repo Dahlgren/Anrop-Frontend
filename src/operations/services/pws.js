@@ -1,7 +1,9 @@
 angular.module('operations').factory('PwsSvc', function ($http, ApiConfig) {
   return {
     add: function (operationId, data) {
-      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/play_with_six', data);
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/play_with_six', {
+        play_with_six: data
+      });
     },
     addons: function (operationId) {
       return $http.get(ApiConfig.BASE_API + '/operations/' + operationId + '/play_with_six');

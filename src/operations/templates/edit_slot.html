@@ -4,7 +4,7 @@
 </div>
 <form style='display: inline-block' ng-submit="updateSlot(slot)">
   <div style="display: inline-block">
-    <input type='text' class="form-control" name='slot_name' ng-model='slot.name' style='display: inline; height: 24px; margin-right: 8px' />
+    <input type='text' class="form-control" name='name' ng-model='slot.name' style='display: inline; height: 24px; margin-right: 8px' />
 
     <br/ ng-if="slot.user">
     <a ng-href='/profile.php?lookup={{ slot.user.id }}'  ng-if="slot.user">
