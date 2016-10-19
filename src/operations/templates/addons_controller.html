@@ -1,0 +1,13 @@
+<div ng-if="addons.length > 0">
+  <div class="block-title">Addons</div>
+  <div class="bordered-block ng-hide" ng-show="addons">
+    <table width=100% cellspacing=0>
+      <tr ng-repeat="addon in addons | orderBy: 'name' track by addon.id">
+        <td style='vertical-align: middle;' ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+          <a target=_blank ng-href="{{addon.url}}" ng-if="addon.url">{{ addon.name }}</a>
+          <a ng-if="!addon.url">{{ addon.name }}</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
