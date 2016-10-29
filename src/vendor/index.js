@@ -1,0 +1,9 @@
+require('jquery');
+require('jquery-ui');
+require('bootstrap-loader');
+require('angular');
+require('angular-route');
+require('angular-ui-bootstrap');
+require('angular-ui-sortable');
+require('ng-file-upload');
+require('ng-imgur');
