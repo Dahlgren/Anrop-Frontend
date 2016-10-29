@@ -7,10 +7,7 @@ module.exports = {
   module: require('./webpack/module'),
   output: require('./webpack/output'),
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
+    require('./webpack/provide'),
     new webpack.optimize.CommonsChunkPlugin('init.js'),
   ],
 };
