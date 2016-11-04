@@ -16,10 +16,7 @@ module.exports = {
         "NODE_ENV": JSON.stringify("production")
       }
     }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
+    require('./webpack/provide'),
     new webpack.optimize.CommonsChunkPlugin('init.js'),
   ],
 }
