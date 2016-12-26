@@ -15,12 +15,9 @@ angular.module('operations').factory('GroupsSvc', function ($http, ApiConfig) {
       return $http.delete(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id);
     },
     update: function (operationId, id, data) {
-      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id, {
+      return $http.patch(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id, {
         group: data
       });
-    },
-    order: function (operationId, data) {
-      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/order', data);
     },
   };
 });
