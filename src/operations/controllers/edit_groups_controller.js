@@ -31,13 +31,8 @@ angular.module('operations').controller('EditGroupsCtrl', function ($scope, Grou
 
   $scope.groupsSortableOptions = {
     stop: function(e, ui) {
-      var positions = $scope.groups.map(function(group, index){
-        return {
-          id: group.id,
-          index: index,
-        };
-      });
-      GroupsSvc.order($scope.operationId, positions).success(function () {
+      $scope.groups.map(function(group, index){
+        return GroupsSvc.update($scope.operationId, group.id, {order: index});
       });
     }
   };

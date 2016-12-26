@@ -46,13 +46,8 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
 
   $scope.slotsSortableOptions = {
     stop: function(e, ui) {
-      var positions = $scope.slots.map(function(slot, index){
-        return {
-          id: slot.id,
-          index: index,
-        };
-      });
-      SlotsSvc.order($scope.operationId, groupId, positions).success(function () {
+      $scope.slots.map(function(slot, index){
+        return SlotsSvc.update($scope.operationId, groupId, slot.id, {order: index});
       });
     }
   };

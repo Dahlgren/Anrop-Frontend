@@ -16,8 +16,5 @@ angular.module('operations').factory('SlotsSvc', function ($http, ApiConfig) {
         slot: data
       });
     },
-    order: function (operationId, groupId, data) {
-      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + groupId + '/slots/order', data);
-    },
   };
 });
