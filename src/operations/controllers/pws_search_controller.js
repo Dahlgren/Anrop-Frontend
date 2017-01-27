@@ -3,7 +3,7 @@ angular.module('operations').controller('PwsSearchCtrl', function ($scope, $uibM
 
   $scope.search = function (query) {
     $scope.mods = [];
-    PwsSvc.search(query).success(function (mods) {
+    PwsSvc.search(query).then(function (mods) {
       $scope.mods = mods;
     });
   };

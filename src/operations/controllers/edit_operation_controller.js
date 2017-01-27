@@ -17,17 +17,17 @@ angular.module('operations').controller('EditOperationCtrl', function ($scope, O
 
   $scope.save = function () {
     $scope.alerts = [];
-    OperationSvc.update($scope.operationId, $scope.operation).success(function (operation) {
+    OperationSvc.update($scope.operationId, $scope.operation).then(function (operation) {
       operation.start = new Date(operation.start);
       $scope.operation = operation;
       $scope.alerts = [
-        { type: 'success', msg: 'Operationen har sparats.' }
+        { type: 'then', msg: 'Operationen har sparats.' }
       ];
     });
   };
 
   var loadOperation = function () {
-    OperationSvc.operation($scope.operationId).success(function (operation) {
+    OperationSvc.operation($scope.operationId).then(function (operation) {
       operation.start = new Date(operation.start);
       $scope.operation = operation;
     });

@@ -2,20 +2,20 @@ angular.module('operations').controller('EditAddonsCtrl', function ($scope, Addo
   $scope.form = {};
 
   $scope.add = function () {
-    AddonsSvc.add($scope.operationId, $scope.form).success(function () {
+    AddonsSvc.add($scope.operationId, $scope.form).then(function () {
       loadAddons();
       $scope.form = {};
     });
   };
 
   $scope.delete = function (addon) {
-    AddonsSvc.delete($scope.operationId, addon.id).success(function () {
+    AddonsSvc.delete($scope.operationId, addon.id).then(function () {
       loadAddons();
     });
   };
 
   var loadAddons = function () {
-    AddonsSvc.addons($scope.operationId).success(function (addons) {
+    AddonsSvc.addons($scope.operationId).then(function (addons) {
       $scope.addons = addons;
     });
   };

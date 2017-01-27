@@ -6,40 +6,40 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
   $scope.slots = [];
 
   $scope.addSlot = function () {
-    SlotsSvc.add($scope.operationId, groupId, {name: $scope.name}).success(function (slot) {
+    SlotsSvc.add($scope.operationId, groupId, {name: $scope.name}).then(function (slot) {
       $scope.slots.push(slot);
       $scope.form = {};
     });
   };
 
   $scope.assignSlot = function (slot, user) {
-    SlotsSvc.update($scope.operationId, groupId, slot.id, {user_id: user.id}).success(function (slot) {
+    SlotsSvc.update($scope.operationId, groupId, slot.id, {user_id: user.id}).then(function (slot) {
       loadSlots();
     });
   };
 
   $scope.emptySlot = function (slot, user) {
-    SlotsSvc.update($scope.operationId, groupId, slot.id, {user_id: null}).success(function (slot) {
+    SlotsSvc.update($scope.operationId, groupId, slot.id, {user_id: null}).then(function (slot) {
       loadSlots();
     });
   };
 
   $scope.copySlot = function (slot) {
-    SlotsSvc.add($scope.operationId, groupId, {name: slot.name}).success(function (slot) {
+    SlotsSvc.add($scope.operationId, groupId, {name: slot.name}).then(function (slot) {
       $scope.slots.push(slot);
       $scope.title = "";
     });
   };
 
   $scope.deleteSlot = function (slot) {
-    SlotsSvc.delete($scope.operationId, groupId, slot.id).success(function () {
+    SlotsSvc.delete($scope.operationId, groupId, slot.id).then(function () {
       var index = $scope.slots.indexOf(slot);
       $scope.slots.splice(index, 1);
     });
   };
 
   $scope.updateSlot = function (slot) {
-    SlotsSvc.update($scope.operationId, groupId, slot.id, slot).success(function () {
+    SlotsSvc.update($scope.operationId, groupId, slot.id, slot).then(function () {
 
     });
   };
@@ -70,7 +70,7 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
   };
 
   var loadSlots = function () {
-    SlotsSvc.slots($scope.operationId, groupId).success(function (slots) {
+    SlotsSvc.slots($scope.operationId, groupId).then(function (slots) {
       $scope.slots = slots;
     });
   };
