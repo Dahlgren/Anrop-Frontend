@@ -7,15 +7,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" ng-href="/">
         <img alt="Brand" src="../images/brand.png" style="margin-top: -3px;" />
       </a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ng-class="{ active: isActive('/operations')}"><a href="#/operations">Operations</a></li>
-        <li ng-class="{ active: isActive('/shoutbox')}"><a href="#/shoutbox">Shoutbox</a></li>
+        <li ng-class="{ active: isActive('/operations')}"><a ng-href="operations">Operations</a></li>
+        <li ng-class="{ active: isActive('/shoutbox')}"><a ng-href="shoutbox">Shoutbox</a></li>
       </ul>
     </div>
   </div>

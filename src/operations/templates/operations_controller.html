@@ -1,6 +1,6 @@
 <div ng-repeat="operation in operations track by operation.id">
   <div class="operation-image-holder">
-    <a href="#operations/{{ operation.id }}" style="background-image: url({{ operation.image }});" class="operation-image"></a>
+    <a href="operations/{{ operation.id }}" style="background-image: url({{ operation.image }});" class="operation-image"></a>
 
     <!-- Ribbons -->
     <div class="corner-ribbon bottom-right red shadow" ng-if="operation.hidden">OPUBLICERAD</div>
@@ -13,7 +13,7 @@
       </div>
 
       <span>
-        <a href="#operations/{{ operation.id }}">{{ operation.title }}</a>
+        <a ng-href="operations/{{ operation.id }}">{{ operation.title }}</a>
       </span>
       <span class="hidden-xs">
         av {{ operation.author.name }}
