@@ -15,14 +15,14 @@ app.constant('ApiConfig', {
   BASE_PWS_API: 'https://playwithsix.anrop.se',
 });
 
-app.config(['$routeProvider',
-  function($routeProvider) {
-    $routeProvider
-      .when('/operations', require('./app/routes/operations/operations.js'))
-      .when('/operations/:operationId', require('./app/routes/operations/operation.js'))
-      .when('/operations/:operationId/edit', require('./app/routes/operations/edit_operation.js'))
-      .when('/shoutbox', require('./app/routes/shouts/shouts.js'))
-      .otherwise({
-        redirectTo: '/operations'
-      });
-  }]);
+app.config(function($locationProvider, $routeProvider) {
+  $locationProvider.html5Mode(true);
+  $routeProvider
+    .when('/operations', require('./app/routes/operations/operations.js'))
+    .when('/operations/:operationId', require('./app/routes/operations/operation.js'))
+    .when('/operations/:operationId/edit', require('./app/routes/operations/edit_operation.js'))
+    .when('/shoutbox', require('./app/routes/shouts/shouts.js'))
+    .otherwise({
+      redirectTo: '/operations'
+    });
+});

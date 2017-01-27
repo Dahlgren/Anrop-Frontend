@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "heroku-postbuild": "npm run webpack",
-    "start": "webpack-dev-server --inline --hot",
+    "start": "webpack-dev-server --inline --hot --history-api-fallback",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --config ./webpack.production.config.js --progress --colors"
   },
