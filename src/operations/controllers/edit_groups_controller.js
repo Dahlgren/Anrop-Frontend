@@ -4,27 +4,27 @@ angular.module('operations').controller('EditGroupsCtrl', function ($scope, Grou
   };
 
   $scope.addGroup = function () {
-    GroupsSvc.add($scope.operationId, $scope.form).success(function (group) {
+    GroupsSvc.add($scope.operationId, $scope.form).then(function (group) {
       $scope.groups.push(group);
       $scope.name = "";
     });
   };
 
   $scope.copyGroup = function (group) {
-    GroupsSvc.copy($scope.operationId, group.id).success(function (group) {
+    GroupsSvc.copy($scope.operationId, group.id).then(function (group) {
       $scope.groups.push(group);
     });
   };
 
   $scope.deleteGroup = function (group) {
-    GroupsSvc.delete($scope.operationId, group.id).success(function () {
+    GroupsSvc.delete($scope.operationId, group.id).then(function () {
       var index = $scope.groups.indexOf(group);
       $scope.groups.splice(index, 1);
     });
   };
 
   $scope.updateGroup = function (group) {
-    GroupsSvc.update($scope.operationId, group.id, group).success(function () {
+    GroupsSvc.update($scope.operationId, group.id, group).then(function () {
 
     });
   };
@@ -38,7 +38,7 @@ angular.module('operations').controller('EditGroupsCtrl', function ($scope, Grou
   };
 
   var loadGroups = function () {
-    GroupsSvc.groups($scope.operationId).success(function (groups) {
+    GroupsSvc.groups($scope.operationId).then(function (groups) {
       $scope.groups = groups;
     });
   };

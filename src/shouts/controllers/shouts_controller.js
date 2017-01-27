@@ -4,14 +4,14 @@ module.controller('ShoutsController', function ($scope, ShoutsService) {
   $scope.form = {};
 
   $scope.create = function () {
-    ShoutsService.create($scope.form.message).success(function () {
+    ShoutsService.create($scope.form.message).then(function () {
       loadShouts();
       $scope.form = {};
     });
   };
 
   var loadShouts = function () {
-    ShoutsService.shouts().success(function (addons) {
+    ShoutsService.shouts().then(function (addons) {
       $scope.shouts = addons;
     });
   };

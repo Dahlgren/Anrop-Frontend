@@ -1,6 +1,6 @@
 angular.module('operations').controller('PwsCtrl', function ($scope, PwsSvc) {
   var loadAddons = function () {
-    PwsSvc.addons($scope.operationId).success(function (addons) {
+    PwsSvc.addons($scope.operationId).then(function (addons) {
       $scope.addons = addons;
     });
   };

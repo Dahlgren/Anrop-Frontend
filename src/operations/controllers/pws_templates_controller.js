@@ -7,7 +7,7 @@ angular.module('operations').controller('PwsTemplatesCtrl', function ($scope, $u
     });
   };
 
-  PwsSvc.templates().success(function (collections) {
+  PwsSvc.templates().then(function (collections) {
     $scope.collections = collections;
   });
 

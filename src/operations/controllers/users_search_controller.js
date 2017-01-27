@@ -8,7 +8,7 @@ angular.module('operations').controller('UserSearchCtrl', function ($scope, $uib
 
   $scope.search = function (query) {
     $scope.users = [];
-    UserSearchSvc.search(query).success(function (users) {
+    UserSearchSvc.search(query).then(function (users) {
       $scope.users = users;
     });
   };
