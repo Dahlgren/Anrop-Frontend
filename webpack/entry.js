@@ -19,6 +19,7 @@ module.exports = {
   app: './src/',
   auth: './src/auth',
   bbcode: './src/bbcode',
+  login: './src/login',
   navigation: './src/navigation',
   operations: './src/operations',
   shouts: './src/shouts',

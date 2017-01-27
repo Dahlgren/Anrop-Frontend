@@ -1,20 +1,20 @@
 angular.module('auth', [
 ])
-.factory('AuthorizationTokenManager', function($window) {
+.factory('AuthenticationTokenManager', function($window) {
   return {
     set: function (token) {
-      $window.sessionStorage.token = token;
+      $window.localStorage.token = token;
     },
     get: function () {
-      return $window.sessionStorage.token;
+      return $window.localStorage.token;
     },
   };
 })
-.factory('AuthorizationInterceptor', function($q, AuthorizationTokenManager, ApiConfig) {
+.factory('AuthenticationInterceptor', function($q, AuthenticationTokenManager, ApiConfig) {
   return {
     request: function(config) {
       if (config.url.indexOf(ApiConfig.BASE_API) == 0) {
-        var token = AuthorizationTokenManager.get();
+        var token = AuthenticationTokenManager.get();
 
         if (token) {
           config.headers.Authorization = 'Token token=' + token;
@@ -26,7 +26,7 @@ angular.module('auth', [
   };
 })
 .config(function($httpProvider) {
-  $httpProvider.interceptors.push('AuthorizationInterceptor');
+  $httpProvider.interceptors.push('AuthenticationInterceptor');
 });
 
 module.exports = 'auth';
