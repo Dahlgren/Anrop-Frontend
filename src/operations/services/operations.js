@@ -1,7 +1,15 @@
-angular.module('operations').factory('OperationSvc', function ($http, ApiConfig) {
+angular.module('operations').factory('OperationSvc', function ($window, $http, ApiConfig) {
   return {
-    operations: function () {
+    cachedUpcomingOperations: function () {
+      try {
+        return JSON.parse($window.localStorage.upcomingOperations);
+      } catch (e) {}
+
+      return null;
+    },
+    upcomingOperations: function () {
       return $http.get(ApiConfig.BASE_API + '/operations/upcoming').then(function (response) {
+        $window.localStorage.upcomingOperations = JSON.stringify(response.data);
         return response.data;
       });
     },
