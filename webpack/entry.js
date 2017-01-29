@@ -25,4 +25,5 @@ module.exports = {
   navigation: './src/navigation',
   operations: './src/operations',
   shouts: './src/shouts',
+  streams: './src/streams',
 }

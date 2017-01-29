@@ -1,0 +1,31 @@
+stream .stream-image-holder {
+  position: relative;
+  padding-top: 60%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+stream .stream-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+stream .stream-image {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+
+stream .avatar-small {
+  margin-right: 1em;
+}
