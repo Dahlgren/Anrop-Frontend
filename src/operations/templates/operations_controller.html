@@ -7,21 +7,31 @@
     <div class="corner-ribbon bottom-right green shadow" ng-if="operation.participating">DELTAR</div>
 
     <div class="operation-image-overlay">
-      <div class="pull-right" style="text-align: right">&nbsp;<br>Deltagare: {{ operation.number_of_participants }} av {{ operation.number_of_slots }}</div>
-      <div class="pull-left" style="margin-right: 1em">
+      <div class="pull-right">
+        <span class="badge">{{ operation.number_of_participants }} / {{ operation.number_of_slots }}</span>
+      </div>
+
+      <div class="pull-left hidden-xs" style="margin-right: 1em">
         <div class="avatar-small" style="background-image: url({{ operation.author.avatar_url }});" alt=""></div>
       </div>
 
-      <span>
-        <a ng-href="operations/{{ operation.id }}">{{ operation.title }}</a>
-      </span>
-      <span class="hidden-xs">
-        av {{ operation.author.name }}
-      </span>
-      <br>
-      <span>
-        Startar {{ operation.start | date:'yyyy-MM-dd HH:mm' }}
-      </span>
+      <div class="operation-overlay-title">
+        <span>
+          <a ng-href="operations/{{ operation.id }}">{{ operation.title }}</a>
+        </span>
+        <span class="hidden-xs">
+          av {{ operation.author.name }}
+        </span>
+      </div>
+
+      <div class="operation-overlay-date">
+        <span class="hidden-xs">
+          {{ operation.start | date:'EEEE d MMMM HH:mm' }}
+        </span>
+        <span class="visible-xs">
+          {{ operation.start | date:'EEE d MMM HH:mm' }}
+        </span>
+      </div>
     </div>
   </div>
 </div>
