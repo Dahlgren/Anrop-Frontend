@@ -1,0 +1,9 @@
+.dockerignore
+.git
+.gitignore
+.travis.yml
+build
+docker-compose.yml
+Dockerfile
+node_modules
+npm-debug.log
