@@ -14,6 +14,7 @@ module.exports = {
     'angular-route',
     'angular-ui-bootstrap',
     'angular-ui-sortable',
+    'markitup',
     'ng-file-upload',
     'ng-imgur',
   ],
