@@ -6,7 +6,10 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
   $scope.slots = [];
 
   $scope.addSlot = function () {
-    SlotsSvc.add($scope.operationId, groupId, {name: $scope.name}).then(function (slot) {
+    SlotsSvc.add($scope.operationId, groupId, {
+      name: $scope.form.name,
+      order: $scope.slots.length,
+    }).then(function (slot) {
       $scope.slots.push(slot);
       $scope.form = {};
     });
