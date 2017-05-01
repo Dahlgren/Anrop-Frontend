@@ -6,12 +6,14 @@ module.exports = {
     'jquery-ui/themes/base/sortable.css',
     'jquery-ui/ui/widgets/sortable',
   ],
+  bootstrap: [
+    'bootstrap-loader',
+  ],
   angular: [
     'angular',
     'angular-route',
     'angular-ui-bootstrap',
     'angular-ui-sortable',
-    'bootstrap-loader',
     'ng-file-upload',
     'ng-imgur',
   ],
