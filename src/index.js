@@ -4,6 +4,7 @@ css.keys().forEach(css);
 var app = angular.module('app', [
   'auth',
   'bbcode',
+  'login',
   'navigation',
   'operations',
   'shouts',
@@ -18,6 +19,7 @@ app.constant('ApiConfig', {
 app.config(function($locationProvider, $routeProvider) {
   $locationProvider.html5Mode(true);
   $routeProvider
+    .when('/login', require('./app/routes/login/login.js'))
     .when('/operations', require('./app/routes/operations/operations.js'))
     .when('/operations/:operationId', require('./app/routes/operations/operation.js'))
     .when('/operations/:operationId/edit', require('./app/routes/operations/edit_operation.js'))
