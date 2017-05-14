@@ -1,0 +1,23 @@
+.arma3sync-icon {
+  background-image: url('../images/arma3sync.png');
+  background-size: contain;
+  display: block;
+  height: 54px;
+  width: 54px;
+}
+
+.playwithsix-icon {
+  background-image: url('../images/play_with_six.png');
+  background-size: contain;
+  display: block;
+  height: 54px;
+  width: 63px;
+}
+
+.teamspeak-icon {
+  background-image: url('../images/teamspeak.png');
+  background-size: contain;
+  display: block;
+  height: 54px;
+  width: 54px;
+}
