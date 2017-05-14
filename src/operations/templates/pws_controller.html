@@ -3,7 +3,7 @@
   <div class="bordered-block ng-hide" ng-show="addons">
     <div class="tbl1">
       <span ng-repeat="addon in addons | orderBy: 'name' track by addon.id">
-        <a ng-href="http://play.withsix.com/arma-3/mods/{{addon.name}}">{{ addon.name }}</a>{{ $last ? '' : ','}}
+        <a ng-href="{{modUrl(addon.name)}}" target=_blank>{{ addon.name }}</a>{{ $last ? '' : ','}}
       <span>
     </div>
 
@@ -40,7 +40,7 @@
   <div class="bordered-block ng-hide" ng-show="addons">
     <div class="tbl1">
       <span ng-repeat="addon in addons | orderBy: 'name' track by addon.id">
-        <a ng-href="http://play.withsix.com/arma-3/mods/{{addon.name}}">{{ addon.name }}</a>{{ $last ? '' : ','}}
+        <a ng-href="{{modUrl(addon.name)}}" target=_blank>{{ addon.name }}</a>{{ $last ? '' : ','}}
       <span>
     </div>
 
