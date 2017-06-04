@@ -8,7 +8,10 @@
 
     <div class="operation-image-overlay">
       <div class="pull-right">
-        <span class="badge">{{ operation.number_of_participants }} / {{ operation.number_of_slots }}</span>
+        <span class="badge">
+          <span class="glyphicon glyphicon-lock" ng-if="operation.locked"></span>
+          {{ operation.number_of_participants }} / {{ operation.number_of_slots }}
+        </span>
       </div>
 
       <div class="pull-left hidden-xs" style="margin-right: 1em">
