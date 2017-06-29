@@ -1,0 +1,3 @@
+<stream stream="stream" ng-repeat="stream in streams track by stream.user.twitch_id"></stream>
+<div class="text-center" ng-show="loading">Laddar streams</div>
+<div class="text-center" ng-show="!loading && streams.length === 0">Ingen stream aktiv</div>

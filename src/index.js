@@ -8,12 +8,14 @@ var app = angular.module('app', [
   'navigation',
   'operations',
   'shouts',
+  'streams',
   'ngRoute',
 ]);
 
 app.constant('ApiConfig', {
   BASE_API: 'https://api.anrop.se',
   BASE_PWS_API: 'https://playwithsix.anrop.se',
+  BASE_STREAMS_API: 'https://streams.anrop.se',
 });
 
 app.config(function($locationProvider, $routeProvider) {
@@ -24,6 +26,7 @@ app.config(function($locationProvider, $routeProvider) {
     .when('/operations/:operationId', require('./app/routes/operations/operation.js'))
     .when('/operations/:operationId/edit', require('./app/routes/operations/edit_operation.js'))
     .when('/shoutbox', require('./app/routes/shouts/shouts.js'))
+    .when('/streams', require('./app/routes/streams/streams.js'))
     .otherwise({
       redirectTo: '/operations'
     });
