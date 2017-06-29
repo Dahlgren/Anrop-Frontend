@@ -8,7 +8,7 @@ angular.module('operations').factory('GroupsSvc', function ($http, ApiConfig) {
       });
     },
     copy: function (operationId, id) {
-      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id + '/copy').then(function (response) {
+      return $http.post(ApiConfig.BASE_API + '/operations/' + operationId + '/groups/' + id + '/clone').then(function (response) {
         return response.data;
       });
     },
