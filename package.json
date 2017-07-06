@@ -35,7 +35,8 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.15.0"
+    "webpack": "^1.15.0",
+    "wysibb": "^1.0.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^1.16.5"
