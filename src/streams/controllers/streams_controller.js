@@ -5,6 +5,11 @@ module.controller('StreamsController', function ($scope, $interval, StreamsServi
     $scope.loading = true;
     StreamsService.streams()
       .then(function (streams) {
+        streams = streams.map(function (stream) {
+          stream.stream.image = stream.stream.image + '?timestamp=' + Date.now()
+          return stream
+        })
+
         $scope.streams = streams;
         $scope.loading = false;
       })
