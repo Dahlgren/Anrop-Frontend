@@ -21,14 +21,14 @@
 </button>
 
 <button style="vertical-align: top" ng-if="!slot.user" class="btn btn-primary" ng-click="search(slot)">
-  <span class="glyphicon glyphicon-plus" aria-hidden="true" title="Tilldela"></span>
+  <span class="glyphicon glyphicon-user" aria-hidden="true" title="Tilldela"></span>
 </button>
 
 <button style="vertical-align: top" ng-if="slot.user" class="btn btn-primary" ng-click="emptySlot(slot, slot.user)">
-  <span class="glyphicon glyphicon-minus" aria-hidden="true" title="Avregistrera"></span>
+  <span class="glyphicon glyphicon-ban-circle" aria-hidden="true" title="Avregistrera"></span>
 </button>
 
-<button style="vertical-align: top" ng-if="!slot.user" class="btn btn-primary" ng-click="deleteSlot(slot)">
+<button style="vertical-align: top" ng-if="!slot.user" class="btn btn-danger" ng-click="deleteSlot(slot)">
   <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
 </button>
 

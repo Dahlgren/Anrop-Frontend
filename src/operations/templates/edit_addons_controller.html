@@ -4,7 +4,7 @@
     <tr ng-repeat="addon in addons | orderBy: 'name' track by addon.id">
       <td style='vertical-align: middle;' ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
         <form style='display: inline-block'>
-          <button type='submit' class='btn btn-primary' ng-click="delete(addon)">
+          <button type='submit' class='btn btn-danger' ng-click="delete(addon)">
             <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
           </button>
         </form>
