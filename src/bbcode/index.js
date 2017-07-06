@@ -1,6 +1,5 @@
 angular.module('bbcode', []);
 
-require('markitup/dist/markitup.css');
 var markItUp = require('markitup');
 
 var horizontalLineIcon = require('raw!./icons/horizontal-line.txt')
