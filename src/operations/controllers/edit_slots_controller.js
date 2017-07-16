@@ -28,7 +28,10 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
   };
 
   $scope.copySlot = function (slot) {
-    SlotsSvc.add($scope.operationId, groupId, {name: slot.name}).then(function (slot) {
+    SlotsSvc.add($scope.operationId, groupId, {
+      name: slot.name,
+      order: $scope.slots.length,
+    }).then(function (slot) {
       $scope.slots.push(slot);
       $scope.title = "";
     });
