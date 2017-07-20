@@ -11,6 +11,7 @@ module.exports = {
   ],
   angular: [
     'angular',
+    'angular-animate',
     'angular-route',
     'angular-ui-bootstrap',
     'angular-ui-sortable',

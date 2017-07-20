@@ -165,3 +165,18 @@ textarea {
 .popover-content {
     background-color: #6B7357;
 }
+
+.panel-anrop {
+    border-color: #9FA388;
+}
+
+.panel-anrop > .panel-heading {
+    color: white;
+    background-color: #798263;
+    border-color: #9FA388;
+}
+
+.panel-anrop > .panel-heading + .panel-collapse > .panel-body {
+    background-color: #535944;
+    border-top-width: 0;
+}

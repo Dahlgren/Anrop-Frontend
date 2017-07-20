@@ -9,6 +9,7 @@ var app = angular.module('app', [
   'operations',
   'shouts',
   'streams',
+  'ngAnimate',
   'ngRoute'
 ])
 
