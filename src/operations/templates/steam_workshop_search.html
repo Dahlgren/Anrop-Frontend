@@ -1,0 +1,54 @@
+<div class="modal-header">
+  <h3 class="modal-title">S&ouml;k Steam</h3>
+</div>
+<div class="modal-body">
+  <form class="form" role="form" ng-submit="search(query)">
+    <div class="form-group">
+      <label for="query" class="control-label">Sökfras</label>
+      <input type="text" class="form-control query" name="query" ng-model="query" />
+    </div>
+    <button class="btn btn-primary" type="submit">
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      Sök
+    </button>
+  </form>
+
+  <div class="progress" ng-if="loading" style="margin-top: 20px; margin-bottom: 10px;">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
+    </div>
+  </div>
+
+  <h4 ng-if="!loading && mods.length === 0">
+    Inga matchingar
+  </h4>
+
+  <div ng-if="mods.length > 0">
+    <h4>Matchningar: {{ mods.length }}</h4>
+
+    <div ng-class-odd="'tbl1'" ng-class-even="'tbl2'" ng-repeat="mod in mods">
+      <a class="btn btn-primary pull-right" ng-click="add(mod)">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        Lägg till
+      </a>
+      <img alt="" class="pull-left" ng-src="{{ mod.image }}" style="width: 100px; margin-right: 10px;" />
+      <div>
+        <p>
+          <strong>{{ mod.title }}</strong>
+          <small>{{ mod.fileSizeFormatted }}</small>
+        </p>
+        <p>
+          <small>
+            <a ng-href="{{ mod.link }}" target="_blank">Visa på Steam Workshop</a>
+          </small>
+        </p>
+        <p>
+          <small bbcode nl2br>{{ mod.description }}</small>
+          <div class="clearfix"></div>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="close()">Stäng</button>
+</div>
