@@ -1,16 +1,15 @@
 <div class="modal-header">
-  <h3 class="modal-title">Templates</h3>
+  <h3 class="modal-title">Mallar</h3>
 </div>
 <div class="modal-body">
   <table class="table">
     <thead>
       <tr>
-        <th></th>
+        <th>Mod</th>
         <th></th>
       </tr>
     </thead>
 
-    <!-- want to insert collection items, here -->
     <tbody>
       <tr ng-repeat="collection in collections">
         <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
@@ -19,14 +18,17 @@
           </p>
           <p>
             <span ng-repeat="mod in collection.mods">
-              {{ mod }}
+              <a ng-href="{{modUrl(mod)}}" target=_blank>
+                {{ mod }}
+              </a>
             </span
           </p>
         </td>
         <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
           <p>
             <a class="btn btn-primary pull-right" ng-click="addCollection(collection)">
-              L&auml;gg till
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              Lägg till
             </a>
             <div class="clearfix"></div>
           </p>

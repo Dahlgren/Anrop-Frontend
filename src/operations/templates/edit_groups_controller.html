@@ -7,19 +7,21 @@
         <div class="form-group">
           <label for="name" class="control-label">Namn</label>
           <input type="text" class="form-control" name="name" id="name" ng-model="group.name">
-          <span class="help-block"></span>
         </div>
 
         <button type="submit" style="vertical-align: top" class="btn btn-primary">
           <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" title="Spara"></span>
+          Spara
         </button>
 
         <button type="button" style="vertical-align: top" class="btn btn-primary" ng-click="copyGroup(group); $event.stopPropagation();">
           <span class="glyphicon glyphicon-duplicate" aria-hidden="true" title="Kopiera"></span>
+          Kopiera
         </button>
 
         <button type="button" style="vertical-align: top" class="btn btn-danger" ng-click="deleteGroup(group); $event.stopPropagation();">
           <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
+          Ta bort
         </button>
       </form>
 
@@ -34,11 +36,11 @@
     <div class="form-group">
       <label for="title" class="control-label">Namn</label>
       <input type="text" class="form-control" name="name" id="name" ng-model="form.name">
-      <span class="help-block"></span>
     </div>
 
     <button type='submit' class='btn btn-primary'>
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      Lägg till grupp
     </button>
   </form>
 </div>

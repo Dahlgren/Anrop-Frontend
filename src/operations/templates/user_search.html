@@ -1,28 +1,48 @@
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-  <h4 class="modal-title">Tilldela</h4>
+  <h4 class="modal-title">Tilldela användare</h4>
 </div>
 <div class="modal-body">
-  <form ng-submit="search(query)" class="form form-horizontal">
-    <input type="text" class="username" name="q" ng-model="query" />
-    <input type="submit" class="btn btn-primary" value="S&ouml;k" />
+  <form class="form" role="form" ng-submit="search(query)">
+    <div class="form-group">
+      <label for="query" class="control-label">Del av användarnamn</label>
+      <input type="text" class="form-control" name="query" ng-model="query" />
+    </div>
+
+    <button class="btn btn-primary" type="submit">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      Sök
+    </button>
   </form>
 
-  <table class="table">
-    <tr ng-repeat="user in users">
-      <td>
-        <p class='form-control-static' style='display: inline'>
-          <button class='btn btn-primary pull-right' ng-click="assignUser(user)">Tilldela</button>
+  <h4 ng-if="users.length === 0">
+    Inga matchingar
+  </h4>
 
-          <div class="pull-left" style="margin-right: 8px">
-            <div class='avatar-small' style='background-image: url({{ user.avatar_url }});'></div>
-          </div>
+  <div ng-if="users.length > 0">
+    <h4>Matchningar: {{ users.length }}</h4>
+    <table class="table">
+      <tr ng-repeat="user in users">
+        <td>
+          <p class='form-control-static' style='display: inline'>
+            <div class="pull-left" style="margin-right: 8px">
+              <div class='avatar-small' style='background-image: url({{ user.avatar_url }});'></div>
+            </div>
 
-          <span>{{ user.name }}</span>
-        </p>
-      </td>
-    </tr>
-  </table>
+            <a ng-href='/users/{{ user.id }}' target=_blank>
+              {{ user.name }}
+            </a>
+          </p>
+        </td>
+        <td>
+          <button class='btn btn-primary pull-right' ng-click="assignUser(user)">
+            <span class="glyphicon glyphicon-plus"></span>
+            Tilldela
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
 <div class="modal-footer">
   <button class="btn btn-primary" ng-click="close()">Avbryt</button>

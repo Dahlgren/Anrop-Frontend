@@ -6,41 +6,45 @@
     <div class="form-group">
       <label for="query" class="control-label">Del av namn eller titel</label>
       <input type="text" class="form-control query" name="query" ng-model="query">
-      <span class="help-block"></span>
     </div>
-    <input class="btn btn-primary" type='submit' value='S&ouml;k' class='btn btn-primary' />
+    <button class="btn btn-primary" type="submit">
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      Sök
+    </button>
   </form>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
+  <h4 ng-if="mods.length === 0">
+    Inga matchingar
+  </h4>
 
-    <!-- want to insert collection items, here -->
-    <tbody>
-      <tr ng-repeat="mod in mods">
-        <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
-          <p>
-            <strong>{{ mod.name }}</strong>
-            <small>{{ mod.type }}</small>
-            <small>{{ mod.formattedSize }}</small>
-          </p>
-          <p>{{ mod.title }}</p>
-        </td>
-        <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
-          <p>
-            <a class="btn btn-primary pull-right" ng-click="add(mod)">
-              L&auml;gg till
-            </a>
-            <div class="clearfix"></div>
-          </p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div ng-if="mods.length > 0">
+    <h4>Matchningar: {{ mods.length }}</h4>
+    <table class="table">
+      <tbody>
+        <tr ng-repeat="mod in mods">
+          <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+            <p>
+              <a ng-href="{{modUrl(mod.name)}}" target=_blank>
+                <strong>{{ mod.name }}</strong>
+              </a>
+              <small>{{ mod.type }}</small>
+              <small>{{ mod.formattedSize }}</small>
+            </p>
+            <p>{{ mod.title }}</p>
+          </td>
+          <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+            <p>
+              <a class="btn btn-primary pull-right" ng-click="add(mod)">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Lägg till
+              </a>
+              <div class="clearfix"></div>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="modal-footer">
   <button class="btn btn-primary" ng-click="close()">Stäng</button>
