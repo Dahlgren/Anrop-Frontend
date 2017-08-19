@@ -1,6 +1,7 @@
-<div class="pull-left" style="margin-right: 8px; margin-bottom: 8px">
+<div class="pull-left avatar-holder">
   <div ng-if="slot.user" class='avatar-small' style='background-image: url({{ slot.user.avatar_url }});'></div>
   <div ng-if="!slot.user" class='avatar-small'></div>
+  <span class="glyphicon glyphicon-lock slot-locked" ng-show="slot.locked"></span>
 </div>
 
 <form class="form-inline" ng-submit="updateSlot(slot)">
@@ -21,6 +22,10 @@
 
   <button type="submit" class="btn btn-primary btn-lg">
     <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" title="Spara"></span>
+  </button>
+
+  <button type="button" class="btn btn-primary btn-lg" ng-click="lockSlot(slot, !slot.locked)">
+    <span class="glyphicon glyphicon-lock" aria-hidden="true" title="Ändra lås"></span>
   </button>
 
   <button type="button" class="btn btn-primary btn-lg" ng-click="copySlot(slot)">

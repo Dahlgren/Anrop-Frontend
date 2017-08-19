@@ -28,7 +28,7 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
   };
 
   $scope.copySlot = function (slot) {
-    SlotsSvc.add($scope.operationId, groupId, {
+    return SlotsSvc.add($scope.operationId, groupId, {
       name: slot.name,
       order: $scope.slots.length,
     }).then(function (slot) {
@@ -38,15 +38,22 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
   };
 
   $scope.deleteSlot = function (slot) {
-    SlotsSvc.delete($scope.operationId, groupId, slot.id).then(function () {
+    return SlotsSvc.delete($scope.operationId, groupId, slot.id).then(function () {
       var index = $scope.slots.indexOf(slot);
       $scope.slots.splice(index, 1);
     });
   };
 
-  $scope.updateSlot = function (slot) {
-    SlotsSvc.update($scope.operationId, groupId, slot.id, slot).then(function () {
+  $scope.lockSlot = function (slot, lock) {
+    slot.locked = lock
+    return $scope.updateSlot(slot).catch(function (err) {
+      slot.locked = !lock
+    })
+  };
 
+  $scope.updateSlot = function (slot) {
+    return SlotsSvc.update($scope.operationId, groupId, slot.id, slot).then(function (updatedSlot) {
+      Object.assign(slot, updatedSlot);
     });
   };
 
