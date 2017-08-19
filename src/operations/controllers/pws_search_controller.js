@@ -1,5 +1,10 @@
-angular.module('operations').controller('PwsSearchCtrl', function ($scope, $uibModalInstance, PwsSvc) {
+angular.module('operations').controller('PwsSearchCtrl', function ($scope, $uibModalInstance, ApiConfig, PwsSvc) {
   $scope.query = "";
+  $scope.mods = [];
+
+  $scope.modUrl = function (name) {
+    return ApiConfig.BASE_PWS_API + '/redirect?name=' + name;
+  }
 
   $scope.search = function (query) {
     $scope.mods = [];

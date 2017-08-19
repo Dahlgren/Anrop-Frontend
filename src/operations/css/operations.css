@@ -56,3 +56,7 @@
 .operation-author {
   padding-left: 10px;
 }
+
+edit-slot button.btn {
+  vertical-align: top;
+}
