@@ -57,6 +57,18 @@
   padding-left: 10px;
 }
 
+edit-slot .avatar-holder {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+edit-slot .avatar-holder .slot-locked {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
 edit-slot button.btn {
   vertical-align: top;
 }
