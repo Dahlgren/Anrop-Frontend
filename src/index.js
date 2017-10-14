@@ -14,7 +14,7 @@ var app = angular.module('app', [
 
 app.constant('ApiConfig', {
   BASE_API: 'https://api.anrop.se',
-  BASE_ARMA3SYNC_API: 'http://arma3sync.anrop.se/manager/api',
+  BASE_ARMA3SYNC_API: 'https://arma3sync.anrop.se/manager/api',
   BASE_PWS_API: 'https://playwithsix.anrop.se',
   BASE_STREAMS_API: 'https://streams.anrop.se',
 });
