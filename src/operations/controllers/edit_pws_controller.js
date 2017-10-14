@@ -50,6 +50,18 @@ angular.module('operations').controller('EditPwsCtrl', function ($scope, $uibMod
     });
   };
 
+  $scope.arma3sync = function () {
+    $uibModal.open({
+      template: require('../templates/arma3sync_controller.html'),
+      controller: 'Arma3SyncCtrl',
+      scope: $scope,
+    }).result.then(function () {
+      loadAddons();
+    }, function () {
+
+    });
+  };
+
   var loadAddons = function () {
     PwsSvc.addons($scope.operationId).then(function (addons) {
       $scope.addons = addons;
