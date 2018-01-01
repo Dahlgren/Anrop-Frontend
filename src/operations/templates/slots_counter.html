@@ -1,0 +1,5 @@
+<span ng-if="slots && slots.length > 0">
+  ({{ slots.length - (slots | filter:{user:null}).length }}
+  /
+  {{ slots.length }})
+</span>
