@@ -1,6 +1,9 @@
 <ul ng-model="groups" ui-sortable="groupsSortableOptions" class="list-unstyled">
   <li ng-repeat="group in groups track by group.id">
-    <div class="block-title">{{ group.name }}</div>
+    <div class="block-title">
+      {{ group.name }}
+      <slots-counter />
+    </div>
 
     <div class="bordered-block ng-hide" ng-show="groups">
       <form class="form" style="padding: 10px" ng-submit="updateGroup(group)">

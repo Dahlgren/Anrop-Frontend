@@ -1,5 +1,8 @@
 <div ng-repeat="group in groups track by group.id">
-  <div class="block-title">{{ group.name }}</div>
+  <div class="block-title">
+    {{ group.name }}
+    <slots-counter />
+  </div>
 
   <div class="bordered-block">
     <slots-controller></slots-controller>
