@@ -1,3 +1,3 @@
 module.exports = {
-  template: require('./streams.html'),
-};
+  template: require('./streams.html')
+}

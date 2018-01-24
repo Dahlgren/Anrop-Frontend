@@ -3,10 +3,10 @@ angular.module('login').factory('LoginSvc', function ($http, ApiConfig) {
     login: function (username, password) {
       return $http.post(ApiConfig.BASE_API + '/sessions', {
         username: username,
-        password: password,
+        password: password
       }).then(function (response) {
-        return response.data;
-      });
-    },
-  };
-});
+        return response.data
+      })
+    }
+  }
+})

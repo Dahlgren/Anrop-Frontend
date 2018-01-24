@@ -1,22 +1,22 @@
-angular.module('bbcode', []);
+angular.module('bbcode', [])
 
-var markItUp = require('markitup');
+var markItUp = require('markitup')
 
-var horizontalLineIcon = require('raw!./icons/horizontal-line.txt')
-var listItemIcon = require('raw!./icons/list-item.txt')
-var youtubeIcon = require('raw!./icons/youtube.txt')
+var horizontalLineIcon = require('./icons/horizontal-line.txt')
+var listItemIcon = require('./icons/list-item.txt')
+var youtubeIcon = require('./icons/youtube.txt')
 
 markItUp.icons.horizontalLine = horizontalLineIcon
 markItUp.icons.listItem = listItemIcon
 markItUp.icons.youtube = youtubeIcon
 
-require('./markitup');
-require('./snippets');
+require('./markitup')
+require('./snippets')
 
-var css = require.context('./css', true, /.css$/);
-css.keys().forEach(css);
+var css = require.context('./css', true, /.css$/)
+css.keys().forEach(css)
 
-var directives = require.context('./directives', true, /.js$/);
-directives.keys().forEach(directives);
+var directives = require.context('./directives', true, /.js$/)
+directives.keys().forEach(directives)
 
-module.exports = 'bbcode';
+module.exports = 'bbcode'

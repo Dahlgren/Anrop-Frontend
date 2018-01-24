@@ -2,8 +2,8 @@ angular.module('operations').directive('editPwsController', function () {
   return {
     controller: 'EditPwsCtrl',
     scope: {
-      operationId: '=',
+      operationId: '='
     },
-    template: require('../templates/edit_pws_controller.html'),
-  };
-});
+    template: require('../templates/edit_pws_controller.html')
+  }
+})

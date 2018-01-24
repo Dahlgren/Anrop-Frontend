@@ -2,8 +2,8 @@ angular.module('operations').directive('addonsController', function () {
   return {
     controller: 'AddonsCtrl',
     scope: {
-      operationId: '=',
+      operationId: '='
     },
-    template: require('../templates/addons_controller.html'),
-  };
-});
+    template: require('../templates/addons_controller.html')
+  }
+})

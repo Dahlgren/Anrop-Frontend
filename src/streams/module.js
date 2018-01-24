@@ -1,1 +1,1 @@
-module.exports = angular.module('streams', []);
+module.exports = angular.module('streams', [])

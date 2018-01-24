@@ -7,8 +7,8 @@ angular.module('bbcode').service('markitupSettings', function () {
           icon: 'bold',
           before: '[b]',
           after: '[/b]',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
@@ -16,8 +16,8 @@ angular.module('bbcode').service('markitupSettings', function () {
           icon: 'italic',
           before: '[i]',
           after: '[/i]',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
@@ -25,8 +25,8 @@ angular.module('bbcode').service('markitupSettings', function () {
           icon: 'underline',
           before: '[u]',
           after: '[/u]',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
@@ -34,8 +34,8 @@ angular.module('bbcode').service('markitupSettings', function () {
           icon: 'strikethrough',
           before: '[s]',
           after: '[/s]',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
@@ -43,8 +43,8 @@ angular.module('bbcode').service('markitupSettings', function () {
           icon: 'horizontalLine',
           before: '[hr]',
           after: '[/hr]',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
@@ -55,8 +55,8 @@ angular.module('bbcode').service('markitupSettings', function () {
           icon: 'picture',
           before: '[img]',
           after: '[/img]',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
@@ -65,8 +65,8 @@ angular.module('bbcode').service('markitupSettings', function () {
           before: '[url]',
           after: '[/url]',
           placeHolder: 'Your text to link here...',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
@@ -74,8 +74,8 @@ angular.module('bbcode').service('markitupSettings', function () {
           icon: 'youtube',
           before: '[youtube]',
           after: '[/youtube]',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
@@ -86,8 +86,8 @@ angular.module('bbcode').service('markitupSettings', function () {
           icon: 'list-ul',
           before: '[list]\n',
           after: '\n[/list]',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
@@ -95,16 +95,16 @@ angular.module('bbcode').service('markitupSettings', function () {
           icon: 'list-ol',
           before: '[list=[![Starting number]!]]\n',
           after: '\n[/list]',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
           name: 'List item',
           icon: 'listItem',
           before: '[*] ',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
@@ -115,8 +115,8 @@ angular.module('bbcode').service('markitupSettings', function () {
           icon: 'quote',
           before: '[quote]',
           after: '[/quote]',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         },
         {
@@ -124,11 +124,11 @@ angular.module('bbcode').service('markitupSettings', function () {
           icon: 'code',
           before: '[code]',
           after: '[/code]',
-          afterInsert: function(h) {
-            $scope.$apply();
+          afterInsert: function (h) {
+            $scope.$apply()
           }
         }
       ]
-    };
-  };
-});
+    }
+  }
+})

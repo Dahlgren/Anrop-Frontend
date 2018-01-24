@@ -1,3 +1,3 @@
 module.exports = {
-  template: require('./operations.html'),
-};
+  template: require('./operations.html')
+}

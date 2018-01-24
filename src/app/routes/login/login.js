@@ -1,3 +1,3 @@
 module.exports = {
-  template: require('./login.html'),
-};
+  template: require('./login.html')
+}

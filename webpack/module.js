@@ -2,42 +2,45 @@ module.exports = {
   loaders: [
     {
       test: /\.css$/,
-      loader: "style-loader!css-loader",
+      loader: 'style-loader!css-loader'
     },
     {
       test: /\.eot$/,
-      loader: "file-loader",
+      loader: 'file-loader'
     },
     {
       test: /\.html$/,
-      loader: 'html-loader',
+      loader: 'html-loader'
     },
     {
       test: /\.jpg$/,
-      loader: "file-loader"
+      loader: 'file-loader'
     },
     {
       test: /\.less$/,
-      loader: "less-loader"
+      loader: 'less-loader'
     },
     {
       test: /\.png$/,
-      loader: "file-loader"
+      loader: 'file-loader'
     },
     {
       test: /\.(sass|scss)$/,
-      loader: "style-loader!css-loader!sass-loader",
+      loader: 'style-loader!css-loader!sass-loader'
     },
     {
       test: /\.svg$/,
-      loader: "file-loader"
+      loader: 'file-loader'
     },
     {
-      test: /\.ttf$/,loader: "file-loader"
+      test: /\.ttf$/, loader: 'file-loader'
+    },
+    {
+      test: /\.txt$/, loader: 'raw-loader'
     },
     {
       test: /\.(woff|woff2)$/,
-      loader: "url-loader?limit=10000&mimetype=application/font-woff"
-    },
-  ],
-};
+      loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+    }
+  ]
+}

@@ -1,1 +1,1 @@
-module.exports = angular.module('shouts', []);
+module.exports = angular.module('shouts', [])

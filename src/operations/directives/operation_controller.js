@@ -2,8 +2,8 @@ angular.module('operations').directive('operationController', function () {
   return {
     controller: 'OperationCtrl',
     scope: {
-      operationId: '=',
+      operationId: '='
     },
-    template: require('../templates/operation_controller.html'),
-  };
-});
+    template: require('../templates/operation_controller.html')
+  }
+})

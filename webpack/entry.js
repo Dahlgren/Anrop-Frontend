@@ -4,10 +4,10 @@ module.exports = {
     'jquery',
     'jquery-ui/themes/base/core.css',
     'jquery-ui/themes/base/sortable.css',
-    'jquery-ui/ui/widgets/sortable',
+    'jquery-ui/ui/widgets/sortable'
   ],
   bootstrap: [
-    'bootstrap-loader',
+    'bootstrap-loader'
   ],
   angular: [
     'angular',
@@ -16,7 +16,7 @@ module.exports = {
     'angular-ui-sortable',
     'markitup',
     'ng-file-upload',
-    'ng-imgur',
+    'ng-imgur'
   ],
   // App
   app: './src/',
@@ -26,5 +26,5 @@ module.exports = {
   navigation: './src/navigation',
   operations: './src/operations',
   shouts: './src/shouts',
-  streams: './src/streams',
+  streams: './src/streams'
 }

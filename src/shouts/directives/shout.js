@@ -6,7 +6,7 @@ require('../module').directive('shout', function () {
     },
     template: require('../templates/shout.html'),
     link: function (scope, element) {
-      element.addClass('shout');
+      element.addClass('shout')
     }
-  };
+  }
 })
