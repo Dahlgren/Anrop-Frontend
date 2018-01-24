@@ -1,5 +1,5 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'source-map',
@@ -9,14 +9,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: false,
-      template: 'index.html',
+      template: 'index.html'
     }),
     new webpack.DefinePlugin({
-      "process.env": {
-        "NODE_ENV": JSON.stringify("production")
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
       }
     }),
     require('./webpack/provide'),
-    new webpack.optimize.CommonsChunkPlugin('init.js'),
-  ],
+    new webpack.optimize.CommonsChunkPlugin('init.js')
+  ]
 }

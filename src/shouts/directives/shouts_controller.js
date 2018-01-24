@@ -1,6 +1,6 @@
 require('../module').directive('shoutsController', function () {
   return {
     controller: 'ShoutsController',
-    template: require('../templates/shouts_controller.html'),
-  };
-});
+    template: require('../templates/shouts_controller.html')
+  }
+})

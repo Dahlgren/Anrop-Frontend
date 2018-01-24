@@ -2,8 +2,8 @@ angular.module('operations').directive('editOperationController', function () {
   return {
     controller: 'EditOperationCtrl',
     scope: {
-      operationId: '=',
+      operationId: '='
     },
-    template: require('../templates/edit_operation_controller.html'),
-  };
-});
+    template: require('../templates/edit_operation_controller.html')
+  }
+})

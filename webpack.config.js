@@ -1,5 +1,4 @@
-var path = require("path");
-var webpack = require('webpack');
+var webpack = require('webpack')
 
 module.exports = {
   devtool: 'source-map',
@@ -8,6 +7,6 @@ module.exports = {
   output: require('./webpack/output'),
   plugins: [
     require('./webpack/provide'),
-    new webpack.optimize.CommonsChunkPlugin('init.js'),
-  ],
-};
+    new webpack.optimize.CommonsChunkPlugin('init.js')
+  ]
+}

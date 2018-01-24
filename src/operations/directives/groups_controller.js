@@ -2,8 +2,8 @@ angular.module('operations').directive('groupsController', function () {
   return {
     controller: 'GroupsCtrl',
     scope: {
-      operationId: '=',
+      operationId: '='
     },
-    template: require('../templates/groups_controller.html'),
-  };
-});
+    template: require('../templates/groups_controller.html')
+  }
+})

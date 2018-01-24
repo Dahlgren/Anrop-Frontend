@@ -1,13 +1,13 @@
-var markItUp = require('markitup');
+var markItUp = require('markitup')
 
-angular.module('bbcode').directive("markitup", function() {
+angular.module('bbcode').directive('markitup', function () {
   return {
-    restrict: "A",
+    restrict: 'A',
     scope: {
-      settings: "=markitup"
+      settings: '=markitup'
     },
-    link: function(scope, element, attrs) {
+    link: function (scope, element, attrs) {
       markItUp(angular.element(element).get(0), scope.settings)
     }
   }
-});
+})

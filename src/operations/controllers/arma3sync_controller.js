@@ -1,14 +1,14 @@
 angular.module('operations').controller('Arma3SyncCtrl', function ($scope, Arma3SyncSvc) {
   $scope.filter = {
-    name: ""
-  };
-  $scope.mods = [];
+    name: ''
+  }
+  $scope.mods = []
 
   var loadMods = function () {
     Arma3SyncSvc.mods($scope.operationId).then(function (mods) {
-      $scope.mods = mods;
-    });
-  };
+      $scope.mods = mods
+    })
+  }
 
-  loadMods();
-});
+  loadMods()
+})

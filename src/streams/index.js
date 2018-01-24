@@ -1,14 +1,14 @@
-require('./module');
+require('./module')
 
-require('./css/streams.css');
+require('./css/streams.css')
 
-var services = require.context('./services', true, /.js$/);
-services.keys().forEach(services);
+var services = require.context('./services', true, /.js$/)
+services.keys().forEach(services)
 
-var directives = require.context('./directives', true, /.js$/);
-directives.keys().forEach(directives);
+var directives = require.context('./directives', true, /.js$/)
+directives.keys().forEach(directives)
 
-var controllers = require.context('./controllers', true, /.js$/);
-controllers.keys().forEach(controllers);
+var controllers = require.context('./controllers', true, /.js$/)
+controllers.keys().forEach(controllers)
 
-module.exports = 'streams';
+module.exports = 'streams'

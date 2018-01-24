@@ -6,7 +6,7 @@ require('../module').directive('stream', function () {
     },
     template: require('../templates/stream.html'),
     link: function (scope, element) {
-      element.addClass('stream');
+      element.addClass('stream')
     }
-  };
+  }
 })

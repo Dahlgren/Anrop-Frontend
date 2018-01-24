@@ -1,5 +1,5 @@
-var css = require.context('./css', true, /.css$/);
-css.keys().forEach(css);
+var css = require.context('./css', true, /.css$/)
+css.keys().forEach(css)
 
 var app = angular.module('app', [
   'auth',
@@ -9,18 +9,18 @@ var app = angular.module('app', [
   'operations',
   'shouts',
   'streams',
-  'ngRoute',
-]);
+  'ngRoute'
+])
 
 app.constant('ApiConfig', {
   BASE_API: 'https://api.anrop.se',
   BASE_ARMA3SYNC_API: 'https://arma3sync.anrop.se/manager/api',
   BASE_PWS_API: 'https://playwithsix.anrop.se',
-  BASE_STREAMS_API: 'https://streams.anrop.se',
-});
+  BASE_STREAMS_API: 'https://streams.anrop.se'
+})
 
-app.config(function($locationProvider, $routeProvider) {
-  $locationProvider.html5Mode(true);
+app.config(function ($locationProvider, $routeProvider) {
+  $locationProvider.html5Mode(true)
   $routeProvider
     .when('/login', require('./app/routes/login/login.js'))
     .when('/operations', require('./app/routes/operations/operations.js'))
@@ -30,5 +30,5 @@ app.config(function($locationProvider, $routeProvider) {
     .when('/streams', require('./app/routes/streams/streams.js'))
     .otherwise({
       redirectTo: '/operations'
-    });
-});
+    })
+})
