@@ -1,4 +1,7 @@
 angular.module('operations').controller('Arma3SyncCtrl', function ($scope, Arma3SyncSvc) {
+  $scope.filter = {
+    name: ""
+  };
   $scope.mods = [];
 
   var loadMods = function () {
