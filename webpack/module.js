@@ -10,6 +10,14 @@ module.exports = {
     },
     {
       test: /\.html$/,
+      loader: 'htmllint-loader',
+      query: {
+        failOnError: true,
+        failOnWarning: true
+      }
+    },
+    {
+      test: /\.html$/,
       loader: 'html-loader'
     },
     {

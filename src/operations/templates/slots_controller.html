@@ -1,13 +1,13 @@
 <div ng-repeat="slot in slots track by slot.id">
-  <div style='vertical-align: top;' ng-class-odd="'tbl2'" ng-class-even="'tbl1'">
+  <div style="vertical-align: top" ng-class-odd="'tbl2'" ng-class-even="'tbl1'">
     <div class="pull-left" style="margin-right: 8px">
-      <div ng-if="slot.user" class='avatar-small' style='background-image: url({{ slot.user.avatar_url }});'></div>
-      <div ng-if="!slot.user" class='avatar-small'></div>
+      <div ng-if="slot.user" class="avatar-small" style="background-image: url({{ slot.user.avatar_url }})"></div>
+      <div ng-if="!slot.user" class="avatar-small"></div>
     </div>
 
     <div>{{ slot.name }}</div>
 
-    <a ng-href='/profile.php?lookup={{ slot.user.id }}'  ng-if="slot.user">
+    <a ng-href="/profile.php?lookup={{ slot.user.id }}" ng-if="slot.user">
       {{ slot.user.name }}
     </a>
 
