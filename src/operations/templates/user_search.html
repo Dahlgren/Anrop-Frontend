@@ -24,18 +24,18 @@
     <table class="table">
       <tr ng-repeat="user in users">
         <td>
-          <p class='form-control-static' style='display: inline'>
+          <p class="form-control-static" style="display: inline">
             <div class="pull-left" style="margin-right: 8px">
-              <div class='avatar-small' style='background-image: url({{ user.avatar_url }});'></div>
+              <div class="avatar-small" style="background-image: url({{ user.avatar_url }});"></div>
             </div>
 
-            <a ng-href='/users/{{ user.id }}' target=_blank>
+            <a ng-href="/users/{{ user.id }}" target="_blank">
               {{ user.name }}
             </a>
           </p>
         </td>
         <td>
-          <button class='btn btn-primary pull-right' ng-click="assignUser(user)">
+          <button class="btn btn-primary pull-right" ng-click="assignUser(user)">
             <span class="glyphicon glyphicon-plus"></span>
             Tilldela
           </button>

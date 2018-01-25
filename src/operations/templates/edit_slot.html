@@ -1,6 +1,6 @@
 <div class="pull-left avatar-holder">
-  <div ng-if="slot.user" class='avatar-small' style='background-image: url({{ slot.user.avatar_url }});'></div>
-  <div ng-if="!slot.user" class='avatar-small'></div>
+  <div ng-if="slot.user" class="avatar-small" style="background-image: url({{ slot.user.avatar_url }})"></div>
+  <div ng-if="!slot.user" class="avatar-small"></div>
   <span class="glyphicon glyphicon-lock slot-locked" ng-show="slot.locked"></span>
 </div>
 
@@ -10,7 +10,7 @@
 
     <div>
       <span ng-if="slot.user">
-        <a ng-href='/profile.php?lookup={{ slot.user.id }}' >
+        <a ng-href="/profile.php?lookup={{ slot.user.id }}">
           {{ slot.user.name }}
         </a>
       </span>

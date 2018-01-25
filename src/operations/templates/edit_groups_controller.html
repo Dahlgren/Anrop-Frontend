@@ -2,14 +2,14 @@
   <li ng-repeat="group in groups track by group.id">
     <div class="block-title">
       {{ group.name }}
-      <slots-counter />
+      <slots-counter></slots-counter>
     </div>
 
     <div class="bordered-block ng-hide" ng-show="groups">
       <form class="form" style="padding: 10px" ng-submit="updateGroup(group)">
         <div class="form-group">
           <label for="name" class="control-label">Namn</label>
-          <input type="text" class="form-control" name="name" id="name" ng-model="group.name">
+          <input type="text" class="form-control" name="name" id="name" ng-model="group.name" />
         </div>
 
         <button type="submit" style="vertical-align: top" class="btn btn-primary">
@@ -37,11 +37,11 @@
 <div class="bordered-block ng-hide" ng-show="groups">
   <form class="form" ng-submit="addGroup()" style="padding: 10px;">
     <div class="form-group">
-      <label for="title" class="control-label">Namn</label>
-      <input type="text" class="form-control" name="name" id="name" ng-model="form.name">
+      <label for="add-group-name" class="control-label">Namn</label>
+      <input type="text" class="form-control" name="add-group-name" id="add-group-name" ng-model="form.name" />
     </div>
 
-    <button type='submit' class='btn btn-primary'>
+    <button type="submit" class="btn btn-primary">
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
       Lägg till grupp
     </button>

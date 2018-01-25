@@ -8,10 +8,10 @@
 
   <div ng-if="mods.length > 0">
     <h4>Mods</h4>
-    <form ng-submit='false'>
+    <form ng-submit="false">
       <div class="form-group">
-        <label for="filterName">Filtrering</label>
-        <input type="text" class="form-control" id="filterName" placeholder="Filtera på namn" ng-model="filter.name" />
+        <label for="filter-name">Filtrering</label>
+        <input type="text" class="form-control" id="filter-name" placeholder="Filtera på namn" ng-model="filter.name" />
       </div>
     </form>
     <table class="table">
@@ -19,7 +19,7 @@
         <tr ng-repeat="mod in mods | filter:filter">
           <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
             <p>
-              <a ng-href="{{modUrl(mod.name)}}" target=_blank>
+              <a ng-href="{{modUrl(mod.name)}}" target="_blank">
                 <strong>{{ mod.name }}</strong>
               </a>
               <small>{{ mod.playWithSix.type }}</small>

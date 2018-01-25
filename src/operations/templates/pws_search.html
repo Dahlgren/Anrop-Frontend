@@ -5,7 +5,7 @@
   <form class="form" role="form" ng-submit="search(query)">
     <div class="form-group">
       <label for="query" class="control-label">Del av namn eller titel</label>
-      <input type="text" class="form-control query" name="query" ng-model="query">
+      <input type="text" class="form-control query" name="query" ng-model="query" />
     </div>
     <button class="btn btn-primary" type="submit">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -24,7 +24,7 @@
         <tr ng-repeat="mod in mods">
           <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
             <p>
-              <a ng-href="{{modUrl(mod.name)}}" target=_blank>
+              <a ng-href="{{modUrl(mod.name)}}" target="_blank">
                 <strong>{{ mod.name }}</strong>
               </a>
               <small>{{ mod.type }}</small>
