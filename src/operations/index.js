@@ -8,7 +8,7 @@ var app = angular.module('operations', [
 ])
 
 app.config(['$compileProvider', function ($compileProvider) {
-  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|pws):/)
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|pws|steam):/)
 }])
 
 var css = require.context('./css', true, /.css$/)
