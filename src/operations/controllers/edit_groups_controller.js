@@ -32,6 +32,7 @@ angular.module('operations').controller('EditGroupsCtrl', function ($scope, Grou
   $scope.groupsSortableOptions = {
     stop: function (e, ui) {
       $scope.groups.map(function (group, index) {
+        group.order = index
         return GroupsSvc.update($scope.operationId, group.id, {order: index})
       })
     }
