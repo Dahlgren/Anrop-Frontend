@@ -1,7 +1,7 @@
 <div class="block-title ng-hide" ng-show="mods && mods.length > 0">Steam Workshop</div>
 <div class="bordered-block ng-hide" ng-show="mods && mods.length > 0">
   <table width="100%" cellspacing="0">
-    <tr ng-repeat="mod in mods | orderBy: 'name' track by mod.id">
+    <tr ng-repeat="mod in mods | orderBy: 'title' track by mod.id">
       <td style="vertical-align: middle" ng-class-odd="'tbl1'" ng-class-even="'tbl2'" width="100%">
         <a ng-show="mod.title" ng-href="{{mod.link}}" target="_blank">{{ mod.title }}</a>
         <a ng-hide="mod.title" ng-href="https://steamcommunity.com/sharedfiles/filedetails/{{mod.steam_workshop_id}}" target="_blank">{{ mod.steam_workshop_id }}</a>
