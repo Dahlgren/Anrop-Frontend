@@ -1,4 +1,4 @@
-angular.module('operations').controller('EditPwsCtrl', function ($scope, $uibModal, PwsSvc) {
+angular.module('operations').controller('EditPwsCtrl', function ($scope, $uibModal, ApiConfig, PwsSvc) {
   $scope.form = {}
 
   $scope.add = function (data) {
@@ -66,6 +66,10 @@ angular.module('operations').controller('EditPwsCtrl', function ($scope, $uibMod
     PwsSvc.addons($scope.operationId).then(function (addons) {
       $scope.addons = addons
     })
+  }
+
+  $scope.modUrl = function (name) {
+    return ApiConfig.BASE_PWS_API + '/redirect?name=' + name
   }
 
   loadAddons()
