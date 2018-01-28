@@ -1,0 +1,7 @@
+<div class="block-title">Steam Workshop</div>
+<div class="bordered-block ng-hide" ng-show="mods">
+  <div ng-class-odd="'tbl1'" ng-class-even="'tbl2'" ng-repeat="mod in mods | orderBy: 'title' track by mod.id">
+    <a ng-show="mod.title" ng-href="{{mod.link}}" target="_blank">{{ mod.title }}</a>
+    <a ng-hide="mod.title" ng-href="https://steamcommunity.com/sharedfiles/filedetails/{{mod.steam_workshop_id}}" target="_blank">{{ mod.steam_workshop_id }}</a>
+  </div>
+</div>

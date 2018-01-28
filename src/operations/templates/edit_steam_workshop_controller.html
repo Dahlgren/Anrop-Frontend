@@ -1,0 +1,24 @@
+<div class="block-title">Steam Workshop</div>
+<div class="bordered-block ng-hide" ng-show="mods">
+  <table width="100%" cellspacing="0">
+    <tr ng-repeat="mod in mods | orderBy: 'title' track by mod.id">
+      <td style="vertical-align: middle" ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+        <form style="display: inline-block">
+          <button type="submit" class="btn btn-danger" ng-click="delete(mod)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Ta bort"></span>
+          </button>
+        </form>
+
+        <a ng-show="mod.title" ng-href="{{mod.link}}" target="_blank">{{ mod.title }}</a>
+        <a ng-hide="mod.title" ng-href="https://steamcommunity.com/sharedfiles/filedetails/{{mod.steam_workshop_id}}" target="_blank">{{ mod.steam_workshop_id }}</a>
+      </td>
+    </tr>
+  </table>
+
+  <div style="padding: 10px">
+    <button class="btn btn-primary" ng-click="search()">
+      <span class="glyphicon glyphicon-search"></span>
+      Sök Steam Workshop
+    </button>
+  </div>
+</div>
