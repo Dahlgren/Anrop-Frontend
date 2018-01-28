@@ -1,3 +1,8 @@
+var fontAwesome = require('@fortawesome/fontawesome')
+var faSteam = require('@fortawesome/fontawesome-free-brands/faSteam')
+
+fontAwesome.library.add(faSteam)
+
 var css = require.context('./css', true, /.css$/)
 css.keys().forEach(css)
 
