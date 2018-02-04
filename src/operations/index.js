@@ -1,6 +1,5 @@
 var app = angular.module('operations', [
   'bbcode',
-  'ngRoute',
   'ui.bootstrap',
   'ui.sortable',
   'ngFileUpload',
