@@ -2,40 +2,22 @@
   <h3 class="modal-title">Mallar</h3>
 </div>
 <div class="modal-body">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Mod</th>
-        <th></th>
-      </tr>
-    </thead>
 
-    <tbody>
-      <tr ng-repeat="collection in collections">
-        <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
-          <p>
-            <strong>{{ collection.title }}</strong>
-          </p>
-          <p>
-            <span ng-repeat="mod in collection.mods">
-              <a ng-href="{{modUrl(mod)}}" target="_blank">
-                {{ mod }}
-              </a>
-            </span>
-          </p>
-        </td>
-        <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
-          <p>
-            <a class="btn btn-primary pull-right" ng-click="addCollection(collection)">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              Lägg till
-            </a>
-            <div class="clearfix"></div>
-          </p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <uib-accordion close-others="true">
+    <div uib-accordion-group class="panel-anrop" ng-repeat="collection in collections">
+      <uib-accordion-heading>{{collection.title}}</uib-accordion-heading>
+
+      <a class="btn btn-primary pull-right" ng-click="addCollection(collection)">
+        L&auml;gg till
+      </a>
+
+      <span ng-repeat="mod in collection.mods">
+        <a ng-href="{{modUrl(mod)}}" target="_blank">{{ mod }}</a>{{ $last ? '' : ','}}
+      </span>
+
+      <div class="clearfix"></div>
+    </div>
+  </uib-accordion>
 </div>
 <div class="modal-footer">
   <button class="btn btn-primary" ng-click="close()">Stäng</button>
