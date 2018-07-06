@@ -1,8 +1,4 @@
-var imgurKey = 'Client-ID c068f0d04c394eb'
-
-angular.module('operations').controller('EditOperationCtrl', function ($scope, OperationSvc, Upload, imgur) {
-  imgur.setAPIKey(imgurKey)
-
+angular.module('operations').controller('EditOperationCtrl', function ($scope, OperationSvc, Upload, ImgurConfig) {
   $scope.$watch('file', function () {
     if ($scope.file) {
       $scope.uploadImage($scope.file)
@@ -10,8 +6,16 @@ angular.module('operations').controller('EditOperationCtrl', function ($scope, O
   })
 
   $scope.uploadImage = function (file) {
-    imgur.upload(file).then(function then (model) {
-      $scope.operation.image = model.link.replace('http://', 'https://')
+    Upload.upload({
+      url: 'https://api.imgur.com/3/image',
+      data: {
+        image: file
+      },
+      headers: {
+        Authorization: ImgurConfig.API_KEY
+      }
+    }).then(function (response) {
+      $scope.operation.image = response.data.data.link
     })
   }
 

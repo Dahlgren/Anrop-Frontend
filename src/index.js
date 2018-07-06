@@ -21,6 +21,10 @@ app.constant('ApiConfig', {
   BASE_STREAMS_API: 'https://streams.anrop.se'
 })
 
+app.constant('ImgurConfig', {
+  API_KEY: 'Client-ID c068f0d04c394eb'
+})
+
 app.config(function ($locationProvider, $routeProvider) {
   $locationProvider.html5Mode(true)
   $routeProvider

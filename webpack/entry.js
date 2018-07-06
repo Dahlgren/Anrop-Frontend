@@ -16,8 +16,7 @@ module.exports = {
     'angular-ui-bootstrap',
     'angular-ui-sortable',
     'markitup',
-    'ng-file-upload',
-    'ng-imgur'
+    'ng-file-upload'
   ],
   // App
   app: './src/',
