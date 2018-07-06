@@ -2,8 +2,7 @@ var app = angular.module('operations', [
   'bbcode',
   'ui.bootstrap',
   'ui.sortable',
-  'ngFileUpload',
-  'ngImgur'
+  'ngFileUpload'
 ])
 
 app.config(['$compileProvider', function ($compileProvider) {
