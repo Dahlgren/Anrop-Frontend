@@ -42,7 +42,7 @@
     "webpack": "^1.15.0"
   },
   "devDependencies": {
-    "standard": "^10.0.3",
+    "standard": "^11.0.1",
     "webpack-dev-server": "^1.16.5"
   },
   "standard": {
