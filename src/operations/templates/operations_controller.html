@@ -15,7 +15,9 @@
       </div>
 
       <div class="pull-left hidden-xs" style="margin-right: 1em">
-        <div class="avatar-small" style="background-image: url({{ operation.author.avatar_url }});" alt=""></div>
+        <a href="users/{{ operation.author.id }}">
+          <div class="avatar-small" style="background-image: url({{ operation.author.avatar_url }});" alt=""></div>
+        </a>
       </div>
 
       <div class="operation-overlay-title">
@@ -23,7 +25,10 @@
           <a ng-href="operations/{{ operation.id }}">{{ operation.title }}</a>
         </span>
         <span class="hidden-xs">
-          av {{ operation.author.name }}
+          av
+          <a href="users/{{ operation.author.id }}">
+            {{ operation.author.name }}
+          </a>
         </span>
       </div>
 
