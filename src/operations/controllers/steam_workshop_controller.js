@@ -1,4 +1,4 @@
-angular.module('operations').controller('SteamWorkshopCtrl', function ($scope, $uibModal, SteamWorkshopSvc) {
+angular.module('operations').controller('SteamWorkshopCtrl', function ($scope, $uibModal, ApiConfig, SteamWorkshopSvc) {
   var loadMods = function () {
     SteamWorkshopSvc.mods($scope.operationId).then(function (mods) {
       mods.forEach(function (mod) {
@@ -12,6 +12,8 @@ angular.module('operations').controller('SteamWorkshopCtrl', function ($scope, $
       $scope.mods = mods
     })
   }
+
+  $scope.presetUrl = ApiConfig.BASE_STEAM_WORKSHOP_API + '/preset/' + $scope.operationId
 
   loadMods()
 })
