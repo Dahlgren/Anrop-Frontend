@@ -26,18 +26,6 @@ angular.module('operations').controller('EditPwsCtrl', function ($scope, $uibMod
     $scope.add($scope.form)
   }
 
-  $scope.search = function () {
-    $uibModal.open({
-      template: require('../templates/pws_search.html'),
-      controller: 'PwsSearchCtrl',
-      scope: $scope
-    }).result.then(function () {
-      loadAddons()
-    }, function () {
-
-    })
-  }
-
   $scope.templates = function () {
     $uibModal.open({
       template: require('../templates/pws_templates.html'),
