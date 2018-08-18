@@ -32,28 +32,3 @@
     </div>
   </div>
 </div>
-
-<div ng-if="addons.length > 0">
-  <div class="block-title">Play withSIX</div>
-  <div class="bordered-block ng-hide" ng-show="addons">
-    <div class="tbl1">
-      <span ng-repeat="addon in addons | orderBy: 'name' track by addon.id">
-        {{ addon.name }}{{ $last ? '' : ','}}
-      </span>
-    </div>
-
-    <div class="tbl2">
-      <a ng-href="pws://playwithsix.anrop.se/operations/{{operationId}}.yml" class="pull-right playwithsix-icon"></a>
-
-      <p>
-        För att hantera dina mods med PlayWithSix, installera först programmet från deras hemsida,
-        <a href="http://withsix.com/download">http://withsix.com/download</a>,
-        och tryck sedan på länken eller lägg manuellt till den som ett repo,
-
-        <a ng-href="pws://playwithsix.anrop.se/operations/{{operationId}}.yml">pws://playwithsix.anrop.se/operations/{{operationId}}.yml</a>
-      </p>
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</div>
