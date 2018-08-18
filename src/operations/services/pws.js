@@ -17,11 +17,6 @@ angular.module('operations').factory('PwsSvc', function ($http, ApiConfig) {
         return response.data
       })
     },
-    search: function (query) {
-      return $http.get(ApiConfig.BASE_PWS_API + '/search?q=' + query).then(function (response) {
-        return response.data
-      })
-    },
     templates: function () {
       return $http.get(ApiConfig.BASE_PWS_API + '/templates').then(function (response) {
         return response.data
