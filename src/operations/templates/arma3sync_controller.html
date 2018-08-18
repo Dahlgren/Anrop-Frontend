@@ -19,9 +19,7 @@
         <tr ng-repeat="mod in mods | filter:filter">
           <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
             <p>
-              <a ng-href="{{modUrl(mod.name)}}" target="_blank">
-                <strong>{{ mod.name }}</strong>
-              </a>
+              <strong>{{ mod.name }}</strong>
               <small>{{ mod.playWithSix.type }}</small>
               <small>{{ mod.formattedSize }}</small>
             </p>

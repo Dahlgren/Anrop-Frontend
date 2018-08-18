@@ -3,7 +3,7 @@
   <div class="bordered-block ng-hide" ng-show="addons">
     <div class="tbl1">
       <span ng-repeat="addon in addons | orderBy: 'name' track by addon.id">
-        <a ng-href="{{modUrl(addon.name)}}" target="_blank">{{ addon.name }}</a>{{ $last ? '' : ','}}
+        {{ addon.name }}{{ $last ? '' : ','}}
       </span>
     </div>
 
@@ -38,7 +38,7 @@
   <div class="bordered-block ng-hide" ng-show="addons">
     <div class="tbl1">
       <span ng-repeat="addon in addons | orderBy: 'name' track by addon.id">
-        <a ng-href="{{modUrl(addon.name)}}" target="_blank">{{ addon.name }}</a>{{ $last ? '' : ','}}
+        {{ addon.name }}{{ $last ? '' : ','}}
       </span>
     </div>
 
