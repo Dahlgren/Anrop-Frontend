@@ -5,9 +5,5 @@ angular.module('operations').controller('PwsCtrl', function ($scope, ApiConfig, 
     })
   }
 
-  $scope.modUrl = function (name) {
-    return ApiConfig.BASE_PWS_API + '/redirect?name=' + name
-  }
-
   loadAddons()
 })

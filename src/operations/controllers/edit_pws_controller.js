@@ -56,9 +56,5 @@ angular.module('operations').controller('EditPwsCtrl', function ($scope, $uibMod
     })
   }
 
-  $scope.modUrl = function (name) {
-    return ApiConfig.BASE_PWS_API + '/redirect?name=' + name
-  }
-
   loadAddons()
 })

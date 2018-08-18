@@ -7,10 +7,6 @@ angular.module('operations').controller('PwsTemplatesCtrl', function ($scope, $u
     })
   }
 
-  $scope.modUrl = function (name) {
-    return ApiConfig.BASE_PWS_API + '/redirect?name=' + name
-  }
-
   PwsSvc.templates().then(function (collections) {
     $scope.collections = collections
   })

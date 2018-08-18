@@ -12,7 +12,7 @@
       </a>
 
       <span ng-repeat="mod in collection.mods">
-        <a ng-href="{{modUrl(mod)}}" target="_blank">{{ mod }}</a>{{ $last ? '' : ','}}
+        {{ mod }}{{ $last ? '' : ','}}
       </span>
 
       <div class="clearfix"></div>
