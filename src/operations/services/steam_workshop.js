@@ -19,6 +19,11 @@ angular.module('operations').factory('SteamWorkshopSvc', function ($q, $http, Ap
         return response.data
       })
     },
+    collection: function (id) {
+      return $http.get(ApiConfig.BASE_STEAM_WORKSHOP_API + '/collection/' + id).then(function (response) {
+        return response.data
+      })
+    },
     info: function (id) {
       if (steamInfoCache[id]) {
         var deferred = $q.defer()
