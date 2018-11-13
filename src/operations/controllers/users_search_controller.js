@@ -4,7 +4,7 @@ angular.module('operations').controller('UserSearchCtrl', function ($scope, $uib
   $scope.users = []
 
   $scope.assignUser = function (user) {
-    $uibModalInstance.close({slot: $scope.slot, user: user})
+    $uibModalInstance.close({ slot: $scope.slot, user: user })
   }
 
   $scope.search = function (query) {

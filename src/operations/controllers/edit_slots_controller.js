@@ -16,13 +16,13 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
   }
 
   $scope.assignSlot = function (slot, user) {
-    SlotsSvc.update($scope.operationId, groupId, slot.id, {user_id: user.id}).then(function (slot) {
+    SlotsSvc.update($scope.operationId, groupId, slot.id, { user_id: user.id }).then(function (slot) {
       loadSlots()
     })
   }
 
   $scope.emptySlot = function (slot, user) {
-    SlotsSvc.update($scope.operationId, groupId, slot.id, {user_id: null}).then(function (slot) {
+    SlotsSvc.update($scope.operationId, groupId, slot.id, { user_id: null }).then(function (slot) {
       loadSlots()
     })
   }
@@ -65,7 +65,7 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
     stop: function (e, ui) {
       $scope.slots.map(function (slot, index) {
         slot.order = index
-        return SlotsSvc.update($scope.operationId, groupId, slot.id, {order: index})
+        return SlotsSvc.update($scope.operationId, groupId, slot.id, { order: index })
       })
     }
   }
