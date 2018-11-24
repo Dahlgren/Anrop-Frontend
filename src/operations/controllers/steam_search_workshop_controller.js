@@ -14,7 +14,7 @@ angular.module('operations').controller('SteamWorkshopSearchCtrl', function ($q,
     $scope.mods = []
     $scope.loading = true
 
-    if (query.match(/\d+/)) {
+    if (query.match(/^\d+$/)) {
       return $q.all({
         collection: fetchCollection(query),
         item: SteamWorkshopSvc.info(query)
