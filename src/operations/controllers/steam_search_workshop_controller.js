@@ -2,6 +2,7 @@ angular.module('operations').controller('SteamWorkshopSearchCtrl', function ($q,
   $scope.query = ''
   $scope.loading = false
   $scope.mods = []
+  $scope.showAddAll = false
 
   var fetchCollection = function (id) {
     return SteamWorkshopSvc.collection(id)
@@ -10,9 +11,16 @@ angular.module('operations').controller('SteamWorkshopSearchCtrl', function ($q,
       })
   }
 
+  $scope.addAll = function () {
+    $scope.mods.forEach(function (mod) {
+      $scope.add(mod)
+    })
+  }
+
   $scope.search = function (query) {
     $scope.mods = []
     $scope.loading = true
+    $scope.showAddAll = false
 
     if (query.match(/^\d+$/)) {
       return $q.all({
@@ -26,6 +34,7 @@ angular.module('operations').controller('SteamWorkshopSearchCtrl', function ($q,
 
         if (collection.length > 0) {
           $scope.mods = collection
+          $scope.showAddAll = true
         } else {
           $scope.mods = [item]
         }

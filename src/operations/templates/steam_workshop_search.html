@@ -11,6 +11,10 @@
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       Sök
     </button>
+    <button class="btn btn-primary" ng-show="showAddAll" ng-click="addAll(); $event.stopPropagation();">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      Lägg till alla nedan från samlingen
+    </button>
   </form>
 
   <div class="progress" ng-if="loading" style="margin-top: 20px; margin-bottom: 10px;">
