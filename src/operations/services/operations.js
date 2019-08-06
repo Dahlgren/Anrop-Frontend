@@ -18,6 +18,13 @@ angular.module('operations').factory('OperationSvc', function ($window, $http, A
         return response.data
       })
     },
+    new: function (data) {
+      return $http.post(ApiConfig.BASE_API + '/operations/', {
+        operation: data
+      }).then(function (response) {
+        return response.data
+      })
+    },
     update: function (id, data) {
       return $http.patch(ApiConfig.BASE_API + '/operations/' + id, {
         operation: data

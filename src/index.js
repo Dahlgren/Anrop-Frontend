@@ -30,6 +30,7 @@ app.config(function ($locationProvider, $routeProvider) {
   $routeProvider
     .when('/login', require('./app/routes/login/login.js'))
     .when('/operations', require('./app/routes/operations/operations.js'))
+    .when('/operations/new', require('./app/routes/operations/new_operation.js'))
     .when('/operations/:operationId', require('./app/routes/operations/operation.js'))
     .when('/operations/:operationId/edit', require('./app/routes/operations/edit_operation.js'))
     .when('/shoutbox', require('./app/routes/shouts/shouts.js'))
