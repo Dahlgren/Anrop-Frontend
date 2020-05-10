@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <h3 class="modal-title">DLCs</h3>
+</div>
+<div class="modal-body">
+  <table class="table">
+    <tbody>
+      <tr ng-repeat="dlc in dlcs">
+        <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+          <p>
+            <strong>{{ dlc.title }}</strong>
+          </p>
+        </td>
+        <td ng-class-odd="'tbl1'" ng-class-even="'tbl2'">
+          <p>
+            <a class="btn btn-primary pull-right" ng-click="addDlc(dlc)">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              Lägg till
+            </a>
+            <div class="clearfix"></div>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="close()">Stäng</button>
+</div>
