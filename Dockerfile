@@ -2,6 +2,7 @@ FROM node:lts-alpine AS builder
 WORKDIR /build/
 COPY package.json /build/
 RUN npm install
+COPY .htmllintrc /build/
 COPY index.html /build/
 COPY src/ /build/src/
 COPY webpack/ /build/webpack/
