@@ -1,7 +1,7 @@
 angular.module('bbcode').directive('bbcode', ['snippets', function (snippets) {
   return {
-    'restrict': 'A',
-    'link': function ($scope, $element, $attrs) {
+    restrict: 'A',
+    link: function ($scope, $element, $attrs) {
       $scope.$watch(function () {
         var contents = $element.html().replace(/^\s+|\s+$/i, '')
 
