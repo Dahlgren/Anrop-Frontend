@@ -1,7 +1,7 @@
-var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  mode: 'production',
   devtool: 'source-map',
   entry: require('./webpack/entry'),
   module: require('./webpack/module'),
@@ -11,12 +11,6 @@ module.exports = {
       inject: false,
       template: 'index.html'
     }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    require('./webpack/provide'),
-    new webpack.optimize.CommonsChunkPlugin('init.js')
+    require('./webpack/provide')
   ]
 }

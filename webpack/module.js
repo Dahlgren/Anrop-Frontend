@@ -1,5 +1,5 @@
 module.exports = {
-  loaders: [
+  rules: [
     {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
@@ -11,6 +11,7 @@ module.exports = {
     {
       test: /\.html$/,
       loader: 'htmllint-loader',
+      exclude: /(node_modules)/,
       query: {
         failOnError: true,
         failOnWarning: true
@@ -38,17 +39,23 @@ module.exports = {
     },
     {
       test: /\.svg$/,
+      loader: 'url-loader?limit=10000'
+    },
+    {
+      test: /\.ttf$/,
       loader: 'file-loader'
     },
     {
-      test: /\.ttf$/, loader: 'file-loader'
-    },
-    {
-      test: /\.txt$/, loader: 'raw-loader'
+      test: /\.txt$/,
+      loader: 'raw-loader'
     },
     {
       test: /\.(woff|woff2)$/,
-      loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      loader: 'url-loader?limit=10000'
+    },
+    {
+      test: /ui-sortable/,
+      use: ['imports-loader?$UI=jquery-ui/ui/widgets/sortable']
     }
   ]
 }

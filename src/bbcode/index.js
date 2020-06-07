@@ -6,9 +6,9 @@ var horizontalLineIcon = require('./icons/horizontal-line.txt')
 var listItemIcon = require('./icons/list-item.txt')
 var youtubeIcon = require('./icons/youtube.txt')
 
-markItUp.icons.horizontalLine = horizontalLineIcon
-markItUp.icons.listItem = listItemIcon
-markItUp.icons.youtube = youtubeIcon
+markItUp.icons.horizontalLine = horizontalLineIcon.default
+markItUp.icons.listItem = listItemIcon.default
+markItUp.icons.youtube = youtubeIcon.default
 
 require('./markitup')
 require('./snippets')
