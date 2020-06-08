@@ -5,6 +5,9 @@ module.exports = {
   devtool: 'source-map',
   entry: require('./webpack/entry'),
   module: require('./webpack/module'),
+  optimization: {
+    minimize: false
+  },
   output: require('./webpack/output'),
   plugins: [
     new HtmlWebpackPlugin({
