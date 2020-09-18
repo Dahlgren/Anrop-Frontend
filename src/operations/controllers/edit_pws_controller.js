@@ -50,6 +50,18 @@ angular.module('operations').controller('EditPwsCtrl', function ($scope, $uibMod
     })
   }
 
+  $scope.dlcs = function () {
+    $uibModal.open({
+      template: require('../templates/pws_dlcs.html'),
+      controller: 'PwsDlcsCtrl',
+      scope: $scope
+    }).result.then(function () {
+      loadAddons()
+    }, function () {
+
+    })
+  }
+
   var loadAddons = function () {
     PwsSvc.addons($scope.operationId).then(function (addons) {
       $scope.addons = addons
