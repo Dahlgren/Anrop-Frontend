@@ -11,6 +11,10 @@ angular.module('operations').controller('PwsDlcsCtrl', function ($scope, $uibMod
       title: 'Contact'
     },
     {
+      name: 'csla',
+      title: 'CSLA'
+    },
+    {
       name: 'gm',
       title: 'Global Mobilization'
     }
