@@ -13,6 +13,7 @@ module.exports = {
     'angular',
     'angular-animate',
     'angular-route',
+    'angular-sanitize',
     'angular-ui-bootstrap',
     'angular-ui-sortable',
     'markitup',
