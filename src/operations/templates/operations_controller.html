@@ -22,7 +22,7 @@
 
       <div class="operation-overlay-title">
         <span>
-          <a ng-href="operations/{{ operation.id }}">{{ operation.title }}</a>
+          <a ng-href="operations/{{ operation.id }}" ng-bind-html="operation.title"></a>
         </span>
         <span class="hidden-xs">
           av

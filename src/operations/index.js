@@ -2,7 +2,8 @@ var app = angular.module('operations', [
   'bbcode',
   'ui.bootstrap',
   'ui.sortable',
-  'ngFileUpload'
+  'ngFileUpload',
+  'ngSanitize'
 ])
 
 app.config(['$compileProvider', function ($compileProvider) {
