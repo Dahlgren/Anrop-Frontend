@@ -1,4 +1,4 @@
-var markItUp = require('markitup')
+const markItUp = require('markitup')
 
 angular.module('bbcode').directive('markitup', function () {
   return {

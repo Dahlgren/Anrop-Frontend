@@ -14,7 +14,7 @@ angular.module('auth', [
     return {
       request: function (config) {
         if (config.url.indexOf(ApiConfig.BASE_API) === 0) {
-          var token = AuthenticationTokenManager.get()
+          const token = AuthenticationTokenManager.get()
 
           if (token) {
             config.headers.Authorization = 'Token token=' + token

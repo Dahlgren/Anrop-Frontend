@@ -2,7 +2,7 @@ angular.module('operations').controller('EditPwsCtrl', function ($scope, $uibMod
   $scope.form = {}
 
   $scope.add = function (data) {
-    var found = $scope.addons.filter(function (addon) {
+    const found = $scope.addons.filter(function (addon) {
       return addon.name === data.name
     })
 
@@ -62,7 +62,7 @@ angular.module('operations').controller('EditPwsCtrl', function ($scope, $uibMod
     })
   }
 
-  var loadAddons = function () {
+  const loadAddons = function () {
     PwsSvc.addons($scope.operationId).then(function (addons) {
       $scope.addons = addons
     })

@@ -18,7 +18,7 @@ angular.module('operations').controller('EditGroupsCtrl', function ($scope, Grou
 
   $scope.deleteGroup = function (group) {
     GroupsSvc.delete($scope.operationId, group.id).then(function () {
-      var index = $scope.groups.indexOf(group)
+      const index = $scope.groups.indexOf(group)
       $scope.groups.splice(index, 1)
     })
   }
@@ -38,7 +38,7 @@ angular.module('operations').controller('EditGroupsCtrl', function ($scope, Grou
     }
   }
 
-  var loadGroups = function () {
+  const loadGroups = function () {
     GroupsSvc.groups($scope.operationId).then(function (groups) {
       $scope.groups = groups
     })

@@ -3,10 +3,10 @@ angular.module('bbcode').directive('bbcode', ['snippets', function (snippets) {
     restrict: 'A',
     link: function ($scope, $element, $attrs) {
       $scope.$watch(function () {
-        var contents = $element.html().replace(/^\s+|\s+$/i, '')
+        let contents = $element.html().replace(/^\s+|\s+$/i, '')
 
-        for (var i in snippets) {
-          var regexp = new RegExp('\\[' + i + '\\](.+?)\\[/' + i.replace(/[^a-z]/g, '') + '\\]', 'gi')
+        for (const i in snippets) {
+          const regexp = new RegExp('\\[' + i + '\\](.+?)\\[/' + i.replace(/[^a-z]/g, '') + '\\]', 'gi')
 
           contents = contents.replace(regexp, snippets[i])
         }

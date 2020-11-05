@@ -1,7 +1,7 @@
-var css = require.context('./css', true, /.css$/)
+const css = require.context('./css', true, /.css$/)
 css.keys().forEach(css)
 
-var app = angular.module('app', [
+const app = angular.module('app', [
   'auth',
   'bbcode',
   'login',

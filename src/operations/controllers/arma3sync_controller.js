@@ -8,7 +8,7 @@ angular.module('operations').controller('Arma3SyncCtrl', function ($scope, $uibM
     $uibModalInstance.dismiss('cancel')
   }
 
-  var loadMods = function () {
+  const loadMods = function () {
     Arma3SyncSvc.mods($scope.operationId).then(function (mods) {
       $scope.mods = mods
     })

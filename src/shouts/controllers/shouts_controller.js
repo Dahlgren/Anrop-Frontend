@@ -1,6 +1,4 @@
-var module = require('../module')
-
-module.controller('ShoutsController', function ($scope, ShoutsService) {
+require('../module').controller('ShoutsController', function ($scope, ShoutsService) {
   $scope.form = {}
 
   $scope.create = function () {
@@ -10,7 +8,7 @@ module.controller('ShoutsController', function ($scope, ShoutsService) {
     })
   }
 
-  var loadShouts = function () {
+  const loadShouts = function () {
     ShoutsService.shouts().then(function (addons) {
       $scope.shouts = addons
     })

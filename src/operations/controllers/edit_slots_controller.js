@@ -1,5 +1,5 @@
 angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibModal, SlotsSvc) {
-  var groupId = $scope.group.id
+  const groupId = $scope.group.id
   $scope.form = {
     name: ''
   }
@@ -39,7 +39,7 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
 
   $scope.deleteSlot = function (slot) {
     return SlotsSvc.delete($scope.operationId, groupId, slot.id).then(function () {
-      var index = $scope.slots.indexOf(slot)
+      const index = $scope.slots.indexOf(slot)
       $scope.slots.splice(index, 1)
     })
   }
@@ -87,7 +87,7 @@ angular.module('operations').controller('EditSlotsCtrl', function ($scope, $uibM
     })
   }
 
-  var loadSlots = function () {
+  const loadSlots = function () {
     SlotsSvc.slots($scope.operationId, groupId).then(function (slots) {
       $scope.slots = slots
     })

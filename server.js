@@ -1,8 +1,8 @@
-var express = require('express')
-var path = require('path')
-var app = express()
+const express = require('express')
+const path = require('path')
+const app = express()
 
-var staticPath = path.join(__dirname, 'build')
+const staticPath = path.join(__dirname, 'build')
 
 app.use(express.static(staticPath))
 
