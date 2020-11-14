@@ -34,12 +34,8 @@ module.exports = {
       loader: 'file-loader'
     },
     {
-      test: /\.(sass|scss)$/,
-      loader: 'style-loader!css-loader!sass-loader'
-    },
-    {
       test: /\.svg$/,
-      loader: 'url-loader?limit=10000'
+      loader: 'file-loader'
     },
     {
       test: /\.ttf$/,
@@ -51,7 +47,7 @@ module.exports = {
     },
     {
       test: /\.(woff|woff2)$/,
-      loader: 'url-loader?limit=10000'
+      loader: 'file-loader'
     },
     {
       test: /ui-sortable/,

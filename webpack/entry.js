@@ -6,9 +6,7 @@ module.exports = {
     'jquery-ui/themes/base/sortable.css',
     'jquery-ui/ui/widgets/sortable'
   ],
-  bootstrap: [
-    'bootstrap-loader'
-  ],
+  bootstrap: './src/bootstrap',
   angular: [
     'angular',
     'angular-animate',
