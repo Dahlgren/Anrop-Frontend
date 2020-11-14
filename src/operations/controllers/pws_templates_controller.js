@@ -1,6 +1,6 @@
 angular.module('operations').controller('PwsTemplatesCtrl', function ($scope, $uibModalInstance, ApiConfig, PwsSvc) {
   $scope.addCollection = function (collection) {
-    collection.mods.map(function (name) {
+    collection.mods.forEach(function (name) {
       $scope.add({
         name: name
       })

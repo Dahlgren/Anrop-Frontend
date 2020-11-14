@@ -1,7 +1,7 @@
 angular.module('operations').controller('EditSteamWorkshopCtrl', function ($scope, $uibModal, SteamWorkshopSvc) {
   $scope.add = function (data) {
-    var newModId = parseInt(data.id, 10)
-    var found = $scope.mods.filter(function (mod) {
+    const newModId = parseInt(data.id, 10)
+    const found = $scope.mods.filter(function (mod) {
       return mod.steam_workshop_id === newModId
     })
 
@@ -33,7 +33,7 @@ angular.module('operations').controller('EditSteamWorkshopCtrl', function ($scop
     })
   }
 
-  var loadMods = function () {
+  const loadMods = function () {
     SteamWorkshopSvc.mods($scope.operationId).then(function (mods) {
       mods.forEach(function (mod) {
         SteamWorkshopSvc.info(mod.steam_workshop_id).then(function (info) {

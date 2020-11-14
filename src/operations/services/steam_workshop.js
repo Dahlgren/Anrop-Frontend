@@ -1,5 +1,5 @@
 angular.module('operations').factory('SteamWorkshopSvc', function ($q, $http, ApiConfig) {
-  var steamInfoCache = {}
+  const steamInfoCache = {}
 
   return {
     add: function (operationId, data) {
@@ -26,7 +26,7 @@ angular.module('operations').factory('SteamWorkshopSvc', function ($q, $http, Ap
     },
     info: function (id) {
       if (steamInfoCache[id]) {
-        var deferred = $q.defer()
+        const deferred = $q.defer()
         deferred.resolve(steamInfoCache[id])
         return deferred.promise
       }

@@ -1,4 +1,4 @@
-var app = angular.module('operations', [
+const app = angular.module('operations', [
   'bbcode',
   'ui.bootstrap',
   'ui.sortable',
@@ -10,16 +10,16 @@ app.config(['$compileProvider', function ($compileProvider) {
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|mailto|pws|steam):/)
 }])
 
-var css = require.context('./css', true, /.css$/)
+const css = require.context('./css', true, /.css$/)
 css.keys().forEach(css)
 
-var services = require.context('./services', true, /.js$/)
+const services = require.context('./services', true, /.js$/)
 services.keys().forEach(services)
 
-var directives = require.context('./directives', true, /.js$/)
+const directives = require.context('./directives', true, /.js$/)
 directives.keys().forEach(directives)
 
-var controllers = require.context('./controllers', true, /.js$/)
+const controllers = require.context('./controllers', true, /.js$/)
 controllers.keys().forEach(controllers)
 
 module.exports = 'operations'

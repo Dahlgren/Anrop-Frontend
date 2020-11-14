@@ -1,7 +1,5 @@
-var module = require('../module')
-
-module.controller('StreamsController', function ($scope, $interval, StreamsService) {
-  var loadStreams = function () {
+require('../module').controller('StreamsController', function ($scope, $interval, StreamsService) {
+  const loadStreams = function () {
     $scope.loading = true
     StreamsService.streams()
       .then(function (streams) {
@@ -21,7 +19,7 @@ module.controller('StreamsController', function ($scope, $interval, StreamsServi
   }
 
   loadStreams()
-  var updateInterval = $interval(loadStreams, 60 * 1000)
+  const updateInterval = $interval(loadStreams, 60 * 1000)
 
   $scope.$on('$destroy', function () {
     if (angular.isDefined(updateInterval)) {

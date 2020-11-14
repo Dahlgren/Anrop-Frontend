@@ -1,5 +1,5 @@
 angular.module('operations').controller('SteamWorkshopCtrl', function ($scope, $uibModal, ApiConfig, SteamWorkshopSvc) {
-  var loadMods = function () {
+  const loadMods = function () {
     SteamWorkshopSvc.mods($scope.operationId).then(function (mods) {
       mods.forEach(function (mod) {
         SteamWorkshopSvc.info(mod.steam_workshop_id).then(function (info) {

@@ -3,10 +3,9 @@ angular.module('bbcode').directive('nl2br', [function () {
     restrict: 'A',
     link: function ($scope, $element, $attrs) {
       $scope.$watch(function () {
-        var contents = $element.html().replace(/^\s+|\s+$/i, '')
-
-        contents = contents.replace(/(?:\r\n|\n|\r)/gi, '<br>')
-
+        const contents = $element.html()
+          .replace(/^\s+|\s+$/i, '')
+          .replace(/(?:\r\n|\n|\r)/gi, '<br>')
         $element.html(contents)
       })
     }

@@ -4,7 +4,7 @@ angular.module('operations').controller('SteamWorkshopSearchCtrl', function ($q,
   $scope.mods = []
   $scope.showAddAll = false
 
-  var fetchCollection = function (id) {
+  const fetchCollection = function (id) {
     return SteamWorkshopSvc.collection(id)
       .catch(function () {
         return []
@@ -27,8 +27,8 @@ angular.module('operations').controller('SteamWorkshopSearchCtrl', function ($q,
         collection: fetchCollection(query),
         item: SteamWorkshopSvc.info(query)
       }).then(function (result) {
-        var collection = result.collection
-        var item = result.item
+        const collection = result.collection
+        const item = result.item
 
         $scope.loading = false
 
