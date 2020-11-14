@@ -26,10 +26,6 @@ module.exports = {
       loader: 'file-loader'
     },
     {
-      test: /\.less$/,
-      loader: 'less-loader'
-    },
-    {
       test: /\.png$/,
       loader: 'file-loader'
     },
