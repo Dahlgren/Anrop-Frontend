@@ -6,7 +6,7 @@ angular.module('operations').controller('OperationsCtrl', function ($scope, Oper
 
   const showInitialOperations = function () {
     const initialOperations = 5
-    $scope.operations = allOperations.slice(0, initialOperations - 1)
+    $scope.operations = allOperations.slice(0, initialOperations)
     $scope.showAllButton = allOperations.length > initialOperations
   }
 
