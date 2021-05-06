@@ -17,6 +17,10 @@ angular.module('operations').controller('PwsDlcsCtrl', function ($scope, $uibMod
     {
       name: 'gm',
       title: 'Global Mobilization'
+    },
+    {
+      name: 'vn',
+      title: 'S.O.G. Prairie Fire'
     }
   ]
 
